@@ -1,0 +1,47 @@
+[{
+    "GameVersion": "1.0.0",
+    "GameName": "A Banking CEO's Dilema",
+    "GameData": [
+        {
+            "Name": "Reinford",
+            "Game": {
+                "Difficulty": "Hard",
+                "EstimatedTime": "3 mins",
+                "CaseDescription": "",
+
+                "Levels": [
+                    {
+                        "LevelNb": 1,
+                        "Scenario": "The economy is slowing down, and your bank's loan portfolio is under pressure as clients are finding it hard to repay.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Tighten credit polices",
+                                "OptionPTS": 2,
+                                "OptionLead": 2,
+                                "OptionExplaination": "Approve fewer loans to reduce risk, but this could limit revenue."
+                            },
+                            {
+                                "Option": "Offer loan restructuring",
+                                "OptionPTS": 6,
+                                "OptionLead": 3,
+                                "OptionExplaination": "Help struggling customers by extending repayment periods, but risk future defaults."
+                            },
+                            {
+                                "Option": "Increase interest rates on new loans",
+                                "OptionPTS": 1,
+                                "OptionLead": 2,
+                                "OptionExplaination": "Attract more high-quality clients but potentially scare off smaller businesses and individuals"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "Sliver",
+            "Game": {
+
+            }
+        }
+    ]
+}]

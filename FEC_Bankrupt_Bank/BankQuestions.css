@@ -1,0 +1,430 @@
+/* ----- BASIC STYLING ---- */
+* {
+    margin: 0;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: whitesmoke;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+:root {
+    --b1: #000000;
+    --b2: #203A7C;
+    --b3: #F0F2E1;
+    --b4: #39A197;
+    --b5: #45AFA2;
+    --b6: #42CDA1;
+    --b7: #47E3A6;
+}
+.hidden {
+    display: none !important;
+}
+body {
+    background: var(--b2);
+}
+#WholePage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+@font-face {
+    font-family: Basic;
+    src: url("Changa-Regular.ttf");
+}
+/* --------- */
+
+/* Navigation Bar */
+#NavBarContainer {
+    width: calc(100% - 30px);
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+#NavBarLogo {
+    width: 120px;
+    height: 120px;
+    background-position: center center;
+    overflow: hidden;
+}
+
+.NavBarBTN {
+    width: fit-content;
+    height: 20px;
+    padding-inline: 5px;
+}
+
+/* Content */
+#ContentContainer {
+    width: calc(100% - 40px);
+    height: calc(100% - 105px);
+    background: var(--b3);
+    border-radius: 20px;
+    padding: 10px;
+    font-family: Basic;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Main Page */
+#MainPage {
+    position: absolute;
+    z-index: 3;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+#MainPage_Header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#MainPage_Header h1,
+#MainPage_Header h2,
+#MainPage_Header h3 {
+    font-family: Basic;
+    color: black;
+}
+#MainPage_Header h1 {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 2;
+}
+#HighlightedBox {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: var(--b4);
+    transition: 1.5s all ease-in-out;
+}
+
+#MainPage_HowToPlay {
+    flex-grow: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#MainPage_HowToPlay h4,
+#MainPage_HowToPlay p {
+    color: black;
+    font-family: Basic;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+}
+#MainPage_HowToPlay p {
+    font-size: 20px;
+
+}
+
+#MainPage_StartContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#MainPage_StartBTN {
+    width: 200px;
+    padding: 15px;
+    border-radius: 5px;
+    background: var(--b5);
+    color: black;
+    border: none;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+
+    outline: 0px solid var(--b5);
+    outline-offset: 0px;
+    transition: 0.2s all ease-in-out;
+}
+#MainPage_StartBTN:hover {
+    outline: 5px solid var(--b6);
+    outline-offset: 3px;
+    background: var(--b6);
+    width: 300px;
+}
+
+/* SelectLevelPage */
+#SelectLevelPage {
+    position: absolute;
+    z-index: 4;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+#SLP_Header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#SLP_Header h2,
+#SLP_Header p {
+    color: black;
+    font-family: Basic;
+}
+
+#SLP_LevelsContainer {
+    width: calc(100% - 40px);
+    padding: 20px;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--b2);
+    border-radius: 20px;
+    min-height: 600px;
+}
+#SLP_LevelOverview {
+    width: calc(50% - 11px);
+    height: 100%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+#SLP_LevelsDisplay {
+    width: calc(50% - 11px);
+    height: 100%;
+    margin-left: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap: 10px;
+}
+#SLP_LevelsDisplay::-webkit-scrollbar {display: none;}
+
+#SLP_LevelOverview h4 {
+    background: var(--b4);
+    padding-inline: 5px;
+    border-radius: 5px;
+}
+#SLP_LevelDetails {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#SLP_DiffDetail status {
+    margin-left: 5px;
+    color: red;
+}
+#SLP_TimeDetail i {
+    font-size: 15px;
+    margin-inline: 4px;
+    margin-right: 6px;
+}
+#SLP_LevelDescription {
+
+    width: calc(100% - 20px);
+    margin-right: 20px;
+    height: fit-content;
+    margin-top: 15px;
+}
+#SLP_LevelDescription h3 {
+    font-size: 25px;
+}
+#SLP_LevelDescription p {
+    font-size: 19px;
+    word-spacing: 4px;
+}
+
+.SLP_Level {
+    width: calc(100% - 26px);
+    height: 35px;
+    padding: 10px;
+    background: var(--b3);
+    border-radius: 15px;
+    /* border: 2.5px solid #b4ac96; */
+    border: 3px solid rgb(255, 235, 196);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.SLP_Level h4 {
+    color: black;
+    font-size: 20px;
+}
+.SLP_LevelCheckBox {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    border: 2px solid rgb(211, 184, 131);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SLP_LevelCheckBox:is(.Selected) {
+    border: 2px solid var(--b4);
+    background: var(--b5);
+}
+.SLP_LevelCheck {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    transition: 0.1s all ease-in-out;
+}
+.SLP_LevelCheck:is(.Selected) {
+    opacity: 1;
+}
+
+#SLP_GameSettings {
+    width: calc(100% - 20px);
+    height: calc(100px - 20px);
+    padding: 10px;
+    background: #dfd5bb;
+    border-radius: 20px; 
+}
+
+#SLP_ButtonContainer {
+    width: calc(100% - 20px);
+    height: calc(100px - 20px);
+    padding: 10px;
+    background: #dfd5bb;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.BackBTN {
+    background: var(--b3);
+    border-radius: 20px;
+    cursor: pointer;
+    width: fit-content;
+    height: 100%;
+    padding-inline: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    transition: 0.3s all ease-in-out
+} .BackBTN i {color: black;}
+.BackBTN:hover {
+    gap: 20px;
+}
+
+#BeginGameBTN {
+    cursor: pointer;
+    height: calc(100% - 7px);
+    padding-inline: 10px;
+    background: var(--b4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border-inline: 1px solid var(--b2);
+    border-bottom: 7px solid var(--b2);
+    transition: 0.1s all ease-in-out
+}
+#BeginGameBTN:active {
+    height: calc(100% - 2px);
+    border-inline: 1px solid var(--b2);
+    border-bottom: 2px solid var(--b2);
+}
+
+/* Questions Page */
+#ScenarioQuestionPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#ScenarioCaseDisplay {
+    width: 75%;
+    height: fit-content;
+    color: black;
+    text-align: center;
+}
+#ScenarioCaseOptions {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.ScenarioCaseOption {
+    width: calc(100% - 20px);
+    height: fit-content;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #dfd5bb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ScenarioCaseOption p {
+    width: calc(100% - 50px);
+    color: black;
+}
+
+.SCO_SelectionBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: red;
+}
+
+
+
+
+/* 
+    --b1: #000000;
+    --b2: #203A7C;
+    --b3: #F0F2E1;
+    --b4: #39A197;
+    --b5: #45AFA2;
+    --b6: #42CDA1;
+    --b7: #47E3A6;
+*/
