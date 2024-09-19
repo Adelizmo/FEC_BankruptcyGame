@@ -1,36 +1,338 @@
 [{
-    "GameVersion": "1.0.0",
+    "GameVersion": "1.5.0",
     "GameName": "A Banking CEO's Dilema",
     "GameData": [
         {
             "Name": "Reinford",
+            "FullName": "Reinford Bank",
             "Game": {
-                "Difficulty": "Hard",
+                "Difficulty": "Easy",
                 "EstimatedTime": "3 mins",
-                "CaseDescription": "",
+                "CaseDescription": "You are the CEO of Feinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in themarket, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
 
                 "Levels": [
                     {
                         "LevelNb": 1,
-                        "Scenario": "The economy is slowing down, and your bank's loan portfolio is under pressure as clients are finding it hard to repay.",
+                        "Scenario": "The economy is slowing down, and your banks loan portfolio is under pressure as clients are finding it hard to repay.",
                         "ScenarioOptions": [
                             {
-                                "Option": "Tighten credit polices",
+                                "Option": "Limit down the amount of loans given out",
+                                "OptionCause": "Cont.",
                                 "OptionPTS": 2,
                                 "OptionLead": 2,
                                 "OptionExplaination": "Approve fewer loans to reduce risk, but this could limit revenue."
                             },
                             {
-                                "Option": "Offer loan restructuring",
+                                "Option": "Extend Loan deadlines",
+                                "OptionCause": "Cont.",
                                 "OptionPTS": 6,
                                 "OptionLead": 3,
                                 "OptionExplaination": "Help struggling customers by extending repayment periods, but risk future defaults."
                             },
                             {
                                 "Option": "Increase interest rates on new loans",
+                                "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 2,
                                 "OptionExplaination": "Attract more high-quality clients but potentially scare off smaller businesses and individuals"
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 2,
+                        "Scenario": "Due to past decisions: Cash reserves are running low and cash withdrawals are increasing.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Sell Non-core assets such as Investments and Land",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 3,
+                                "OptionLead": 3,
+                                "OptionExplaination": "Free up cash quickly, but lost strategic investments."
+                            },
+                            {
+                                "Option": "Issue a short term bond.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 2,
+                                "OptionLead": 2.5,
+                                "OptionExplaination": "Could help raise funds quickly, but it may hurt investor confidence if the issue insists."
+                            },
+                            {
+                                "Option": "Seek a government loan to get the company back up.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 2.5,
+                                "OptionExplaination": "Will damage the companies Reputation."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 2.5,
+                        "Scenario": "Due to past decisions: Investor confidence has went down and your reputation is questioned.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Address this issue with a public apology",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "While this could help boost reputation if done correctly and all expectations are met, it usually affirms to the public the problems which also decreases your reputation and reduce investor confidence "
+                            },
+                            {
+                                "Option": "Strengthen communication with investors",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 3,
+                                "OptionExplaination": "By providing Reports and Financial Statements, your investors will feel reassured and place their trust in you."
+                            },
+                            {
+                                "Option": "Announce a Share Buyback Program, a program that pushes the bank to buying back their stocks to show confidence",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "Buying back your stocks that are considered undervalued can show your investors your expression of confidence in the banks ability. However, the root of the issue is only met with more trouble as the buyback would require a lot of cash"
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 3,
+                        "Scenario": "A new FinTech Idea has the potential to reduce the operation cost across all branches.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Invest in the tech and implement it on all branches",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 3.5,
+                                "OptionExplaination": "While investing on the technology is the way to go, implementing it quickly on all branches could cause wide distruptions on all branches and could lower customer satisfaction. Generally, it requires a smooth transition."
+                            },
+                            {
+                                "Option": "Wait and observe competitors whom adopt this technology and later apply it after it has been proven to work",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 2,
+                                "OptionLead": 3.5,
+                                "OptionExplaination": "Too slow. Even though this might have worked, it can only but you back on the race to implement that technology."
+                            },
+                            {
+                                "Option": "Introduce and pilot the tech in few branches and analyze its performance before going full-scale.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 3,
+                                "OptionLead": 4,
+                                "OptionExplaination": "A wise and smooth transition into to this Tech with minimizing customer disatisfaction before implementation."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 3.5,
+                        "Scenario": "Due to past decisions: Customer satisfaction rate has went down, and people are favoring other competitors than you.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Immediate rollback of the FinTech and fix the issue before reimplementing it.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 0.25,
+                                "OptionLead": 4,
+                                "OptionExplaination": "This action can show to customers that your incapable handling that tech and might opt out for other competitors whom might have already implemented it effectively."
+                            },
+                            {
+                                "Option": "Hire additional FinTech experts to address and fix the issue while keeping customers informed.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 0.5,
+                                "OptionLead": 4,
+                                "OptionExplaination": "Handling customer anger while fixing the problem is the best way to handle such issue."
+                            },
+                            {
+                                "Option": "Enhance customer support channels while also providing surveys to customers, so they can rate that service and describe the issues they encountered.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "While you are communicating with customers, you are not providing a sustainable plan to fix the core of the issue."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 4,
+                        "Scenario": "In recent events, a competitor seems to be in the process of merging with another bank that increases their customer base, market share, and funding. That competitor is posing a threat to your customer base.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Slash prices with promotions and offer competitive interest rates to attract customers",
+                                "OptionCause": "Lost",
+                                "OptionWhy": "You have reduced your ability to grow as a bank.",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "While this would attract customers, it is not favorable in the long-term as it limits revenue, reduces the ability to grow, and increases your risk sensitivity."
+                            },
+                            {
+                                "Option": "Cut Operational Costs to Maintain Profit Margins",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 8,
+                                "OptionExplaination": "Reducing Operation cost by downsizing or halting investments will only lead to limitations in future growth and expansion."
+                            },
+                            {
+                                "Option": "Focus on providing quality customer service.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 3,
+                                "OptionLead": 5,
+                                "OptionExplaination": "This is the best solution, as your limiting further losses while retaining your most loyal customers."
+                            },
+                            {
+                                "Option": "Consider a merger of your own.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 2,
+                                "OptionLead": 6,
+                                "OptionExplaination": "With a merger, your driving your bank to uncharted lands filled with high risks and high rewards."
+                            }
+                        ]
+                    },
+                    {                                                                                                                                                                                                                                                                                                                   
+                        "LevelNb": 5,
+                        "Scenario": "Unexpectedly, a sudden increase of high-profile staff resignation letters has been passed to you. The high-profile staff resignation wave include the Chief Customer Officer (CCO), Chief of Technology Officer (CTO), and others. You must act swiftly to avoid further options.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Promote from within for temporary roles (interim) and strieve for long-term replacements.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 3,
+                                "OptionLead": 9,
+                                "OptionExplaination": "Promoting from with is an efficient way of handing down the work in a smooth transition. In addition, this action increases employee satisfaction, as they feel that they are prioritized."
+                            },
+                            {
+                                "Option": "Recruit high profile candidates with good offers to attract the best talent out there.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 5.5,
+                                "OptionExplaination": "While you might be able to attract talent, you will not satisfy your original staff, as they will feel desatisfied and betrayed that you did not select from within. Thus, this option would only increase staff resignation."
+                            },
+                            {
+                                "Option": "Establish an Internal Leadership Committee to oversee critical functions and create a succession plan.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 4,
+                                "OptionLead": 9,
+                                "OptionExplaination": "The Committe will fill the gaps of the missing staff temporarily and will make sure to recruit the best fit."
+                            }
+                        ]
+                    },
+                    {                                                                                                                                                                                                                                                                                                                   
+                        "LevelNb": 5.5,
+                        "Scenario": "Due to past decisions: The staff have become dissatisfied with betrayal of not promoting from within. Your decision has led to low teamwork efforts between the new employees and the old ones.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Create a morale boosting team building retreat.",
+                                "OptionCause": "Lost",
+                                "OptionWhy": "",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "The heat between new employees and old ones will not be solved due to team building events. It needs geniune transparency."
+                            },
+                            {
+                                "Option": "Offer Career development opportunities.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "Offering this career development opportunities will not cool down the heat between these two sides."
+                            },
+                            {
+                                "Option": "Conduct a transparency meeting with your employees.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 2,
+                                "OptionLead": 9,
+                                "OptionExplaination": "Being honest is what they need to feel reassured. However, as a CEO you must be loyal to those you work with, Afterall a leadership quality is loyalty."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 6,
+                        "Scenario": "Due to past decisions: you have attracted 3 possible candidates for your merger.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Innovate Bank: They aim for introducing highly effective technology into the banking system.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 0.5,
+                                "OptionLead": 7,
+                                "OptionExplaination": "A good choice as the bank is heading towards a modern world filled with high tech integration."
+                            },
+                            {
+                                "Option": "Regional Trust Bank: A bank that aims for stability and effective risk management",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 7,
+                                "OptionExplaination": "This is the best choice as merging is quite risky and distruptive. The aim of the merger is to be as smooth and as stable as possible"
+                            },
+                            {
+                                "Option": "SC Bank: Aimming for quick expansion and maximization of profit through high risk ventures.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "The Merger is a delicate process that has protective measures to ensure a smooth transition. Expansion is the obvious goal on both sides. However, risky actions at such early stages of the merger undermines that whole point of the plan."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 7,
+                        "Scenario": "Fortunately, the merger has been accepted and will be soon implemented. However, this merger has placed your job status as CEO in danger. You must choose an effective option to save your job.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Offer a temporary leadership role to an external consultant.",
+                                "OptionCause": "Victory",
+                                "OptionPTS": 1,
+                                "OptionExplaination": "Shows your commited to smooth and efficient transition and integration."
+                            },
+                            {
+                                "Option": "Announce a Major investment in a high risk venture.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "High Risk in such early days of merging would only cause more distablity."
+                            },
+                            {
+                                "Option": "Push for immediate expansion into new markets post-merger.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "This desicion can cause financial strain on the bank and can lead investors to believe that you care about growth more than stability first."
+                            },
+                            {
+                                "Option": "Announce a significant executive compensation increase.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "Could be precieved as self-serving or inappropriate in such expansion."
+                            }
+
+                        ]
+                    },
+                    {
+                        "LevelNb": 7.5,
+                        "Scenario": "You have managed to keep your position as CEO; however, your employees are threatened by such decisions at you cant change due to responsibility. Harming such employees should be the last thing your list.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Offer training programs for those who have been laid off as recompensation with the basic packages.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 1,
+                                "OptionExplaination": "Shows your commited to smooth and efficient transition and integration."
+                            },
+                            {
+                                "Option": "Offer a generous recompensations packages.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "High Risk in such early days of merging would only cause more distablity."
+                            },
+                            {
+                                "Option": "Give employees warning by 3 months so they can prepare and get another job.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "This will increase senstivity between kept employees and laid off ones."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 8,
+                        "Scenario": "Due to past decisions: Cutting costs have led the customers to be let down on the quality of service given. The board has instructed you act immediately ASAP.",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Offer a public apology.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "What is their to offer? An apology is the last plan for any organization that has its backs against the wall. Your not against the wall."
+                            },
+                            {
+                                "Option": "Invite premium customers to exclusive bank events.",
+                                "OptionCause": "Lost",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "The problem is with all customers not just your premium customers. If customers found out about these events, it would ruin the reputation as a greedy bank that just cares about their premium members."
+                            },
+                            {
+                                "Option": "Start a Customer Appreciation Marketing Campaign.",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 9,
+                                "OptionExplaination": "The problem is with the customers satisfaction. Your campaign address the issue and reassures the customers of the commitment for them."
                             }
                         ]
                     }
@@ -39,8 +341,11 @@
         },
         {
             "Name": "Sliver",
+            "FullName": "Sliver Oak Bank (Under Development)",
             "Game": {
-
+                "Difficulty": "Easy",
+                "EstimatedTime": "3 mins",
+                "CaseDescription": "Hello World!"
             }
         }
     ]

@@ -31,10 +31,15 @@ body {
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 @font-face {
     font-family: Basic;
     src: url("Changa-Regular.ttf");
+}
+@font-face {
+    font-family: Blanka;
+    src: url('Blanka-Regular.otf');
 }
 /* --------- */
 
@@ -53,12 +58,136 @@ body {
     background-position: center center;
     overflow: hidden;
 }
-
+#NavBarBTNS {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
 .NavBarBTN {
+    gap: 10px;
+    cursor: pointer;
     width: fit-content;
     height: 20px;
-    padding-inline: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Basic;
+    background: var(--b4);
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all ease-in-out;
+    font-size: 20px;
 }
+.NavBarBTN:hover {
+    background: transparent
+}
+.NavBarBTN:is(.ResetGameBTN) i {
+    font-size: 17px;
+}
+
+/* Pop up */
+#PopUp_Container {
+    width: calc(100% - 60px);
+    padding-inline: 30px;
+    margin-top: 100px;
+    height: calc(100% - 100px);
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    justify-content: end;
+}
+#PopUpContent {
+    overflow: hidden;
+    width: 300px;
+    height: 100px;
+    background:rgb(211, 184, 131);
+    border: 1px solid rgb(181, 145, 71);
+    border-radius: 20px;
+    transition: 0.3s all ease-in-out;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Basic;
+    position: relative;
+    right: -200px;
+    width: 100px;
+    opacity: 0.5;
+}
+#POP_H {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100%;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#PopUpContent p {
+    overflow: hidden;
+    flex-shrink: 0;
+    width: calc(100% - 160px);
+    padding-inline: 30px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap: nowrap;
+    font-size: 20px;
+}
+
+.PopOut {
+    animation: PopUp 4s ease-in-out forwards;
+}
+@keyframes PopUp {
+    0% {
+        right: -200px;
+        width: 100px;
+        opacity: 0.5;
+    }
+    5% {
+        right: 0px;
+        width: 100px;
+        opacity: 1;
+    }
+    7.5% {
+        right: 0px;
+        width: 100px;
+        opacity: 1;
+    }
+    12.5% {
+        right: 0px;
+        width: 350px;
+        opacity: 1;
+    }
+
+    87.5% {
+        right: 0px;
+        width: 350px;
+        opacity: 1;
+    }
+    92.5% {
+        right: 0px;
+        width: 100px;
+        opacity: 1;
+    }
+    95% {
+        right: 0px;
+        width: 100px;
+        opacity: 1;
+    }
+    100% {
+        right: -200px;
+        width: 100px;
+        opacity: 0.5;
+    }
+}
+
 
 /* Content */
 #ContentContainer {
@@ -73,8 +202,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
-
 
 /* Main Page */
 #MainPage {
@@ -149,23 +278,21 @@ body {
 #MainPage_StartBTN {
     width: 200px;
     padding: 15px;
-    border-radius: 5px;
-    background: var(--b5);
+    border-radius: 10px;
+    background: var(--b4);
     color: black;
-    border: none;
     font-size: 25px;
     color: white;
     cursor: pointer;
+    border: none;
+    border-inline: 1px solid var(--b2);
+    border-bottom: 7px solid var(--b2);
 
-    outline: 0px solid var(--b5);
-    outline-offset: 0px;
     transition: 0.2s all ease-in-out;
 }
-#MainPage_StartBTN:hover {
-    outline: 5px solid var(--b6);
-    outline-offset: 3px;
-    background: var(--b6);
-    width: 300px;
+#MainPage_StartBTN:active {
+    border-inline: 1px solid var(--b2);
+    border-bottom: 2px solid var(--b2);
 }
 
 /* SelectLevelPage */
@@ -189,12 +316,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 #SLP_Header h2,
 #SLP_Header p {
+    height: 50px;
     color: black;
     font-family: Basic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5px;
 }
 
 #SLP_LevelsContainer {
@@ -237,6 +368,7 @@ body {
     background: var(--b4);
     padding-inline: 5px;
     border-radius: 5px;
+    text-align: center;
 }
 #SLP_LevelDetails {
     font-size: 20px;
@@ -248,7 +380,15 @@ body {
 }
 #SLP_DiffDetail status {
     margin-left: 5px;
+}
+.SLP_DIF_Hard {
     color: red;
+}
+.SLP_DIF_Medium {
+    color: orange;
+}
+.SLP_DIF_Easy {
+    color: lawngreen;
 }
 #SLP_TimeDetail i {
     font-size: 15px;
@@ -371,16 +511,50 @@ body {
 
 /* Questions Page */
 #ScenarioQuestionPage {
+    position: absolute;
+    z-index: 5;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
+}
+
+#SQ_MainContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#SQ_BTNContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SQ_ContinueBTN {
+    padding-inline: 20px;
+    background: var(--b4);
+    border-radius: 10px;
+    border-inline: 1px solid var(--b2);
+    border-bottom: 7px solid var(--b2);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+.SQ_ContinueBTN:active {
+    border-bottom: 2px solid var(--b2);
 }
 
 #ScenarioCaseDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ScenarioCaseDisplay p{
     width: 75%;
     height: fit-content;
     color: black;
@@ -393,6 +567,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
 }
 .ScenarioCaseOption {
     width: calc(100% - 20px);
@@ -410,15 +585,284 @@ body {
 }
 
 .SCO_SelectionBox {
+    cursor: pointer;
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    background: purple;
+    border: 2px solid rgb(220, 187, 120);
+    overflow: hidden;
+}
+.SCO_Selector {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--b4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SCO_Selector:is(.Selected) {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background: var(--b4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Animation_Appear {
+    animation: AppearFromLeft 0.75s ease-in-out forwards;
+}
+@keyframes AppearFromLeft {
+    0% {
+        opacity: 0;
+        translate: -100px 0px;
+    }
+    100% {
+        opacity: 1;
+        translate: 0px 0px;
+    }
+}
+
+/* End Page */
+#ScenarioEndPage {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    position: absolute;
+    z-index: 6;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#SE_Sec1 {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+#End_Message {
+    flex-shrink: 0;
+    color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+}
+#End_Advice {
+    flex-shrink: 0;
+    color: rgb(80, 80, 80);
+    width: 60%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+    text-wrap: wrap;
+    font-weight: 600;
+}
+.End_Lost {
+    color: darkred;
+}
+.End_Victory {
+    color: black;
+}
+#End_ContentContainer {
+    height: calc(100% - 221px);
+    width: 75%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--b2);
+}
+#End_PDM_C {
+    height: 60px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid var(--b2);
+    position: relative;
+    z-index: 6;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+#End_PDM_C p {
+    color: black;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    line-height: 30px;
+}
+#ViewAllScenarios {
+    padding-inline: 10px;
+    height: fit-content;
+    border-radius: 10px;
+    border-inline: 1px solid var(--b2);
+    border-bottom: 7px solid var(--b2);
+    background: var(--b4);
+    transition: 0.2s all ease-in-out;
+}
+#ViewAllScenarios:active {
+    border-bottom: 2px solid var(--b2);
+}
+
+#End_PDMC {
+    width: 100%;
+    height: calc(100% - 73px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    gap: 10px;
+    position: relative;
+    z-index: 6;
+}
+#End_PDMC::-webkit-scrollbar {display: none;}
+
+.End_CaseContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+.End_CaseContainer:first-child {
+    margin-top: 10px;
+}
+.End_DecisionContainer {
+    width: calc(100% - 100px);
+    padding: 20px;
+    padding-left: 15px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border-left: 5px solid var(--b2);
+    background: var(--b3);
+}
+.End_CaseNB {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.End_CaseNB p {
+    color: black;
+    font-size: 40px;
+}
+
+
+.End_Scenario {
+    width: 100%;
+    min-height: 30px;
+    line-height: 35px;
+    display: none;
+    align-items: center;
+    color: black;
+    border-bottom: 1px solid var(--b2);
+    font-size: 25px;
+}
+.End_Decision {
+    margin-block: 10px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    background: #dfd5bb;
+    color: black;
+    border-radius: 20px;
+    border: 1px solid rgb(220, 187, 120);
+    position: relative;
+}
+.End_Explain {
+    width: 100%;
+    color: black;
+    font-size: 25px;
+}
+
+#SmoothEffectC {
+    position: absolute;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(0deg, var(--b3) 0%, rgba(255, 255, 255, 0) 20%);
 }
 
 
 
+/* Styling Columns */
+#StylingBarColumnsContainer {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    opacity: 0.5;
+}
+#StylingBarColumns {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.StylingBarColumnsSec {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+}
 
+.StylingBarColumn {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: calc(33.33% - 10%);
+    background: var(--b6);
+    transition: 0.3s all ease-in-out;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: end;
+    overflow: hidden;
+}
+.StylingBarDark {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 33.33%;
+    width: 100%;
+    background: var(--b2);
+    box-shadow: 0px -10px 0px 0px var(--b4);
+    transition: 0.3s all ease-in-out;
+}
+.StylingBarLight {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 33.33%;
+    width: 100%;
+    background: var(--b4);
+    transition: 0.3s all ease-in-out;
+}
 /* 
     --b1: #000000;
     --b2: #203A7C;

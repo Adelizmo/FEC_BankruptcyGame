@@ -23,16 +23,17 @@
             </div>
 
             <div id="NavBarBTNS">
-                <div class="NavBarBTN"></div>
+                <div class="NavBarBTN"><i class="fa-solid fa-language"></i>English</div>
+                <div class="NavBarBTN ResetGameBTN"><i class="fa-solid fa-rotate-right"></i>Reset Game</div>
             </div>
         </div>
         <div id="ContentContainer" style="color: black; font-size: 30px;">
-            <div id="MainPage" class="hidden">
+            <div id="MainPage" class="">
                 <div id="MainPage_Header">
                     <h2>Finance and Economics Club</h2>
                     <!-- <h2>نادي المالية والاقتصاد</h2> -->
                     <h3>Presents</h3>
-                    <h1>Bank Bankruptcy <div id="HighlightedBox"></div></h1>
+                    <h1>The Bankrupt Bank <div id="HighlightedBox"></div></h1>
                 </div>
                 <div id="MainPage_HowToPlay">
                     <h4>How to play?</h4>
@@ -45,11 +46,11 @@
                     </p>
                     <p>
                         Your Job as <span style="background: var(--b4); padding-inline: 2px;">CEO</span> is to make the best desicions for each 
-                        senario in order to save the bank from bankrupcy and achieve maximum profits.
+                        senario in order to save the bank from bankruptcy and achieve maximum profits.
                     </p> 
                 </div>
                 <div id="MainPage_StartContainer">
-                    <button id="MainPage_StartBTN">Start Game</button>
+                    <button onclick="ChangePage('Main')" id="MainPage_StartBTN">Start Game</button>
                 </div>
             </div>
             <div id="SelectLevelPage" class="hidden">
@@ -60,15 +61,15 @@
                 <div id="SLP_LevelsContainer">
                     <div id="SLP_LevelOverview">
                         <h3>Case Overview</h3>
-                        <h4>Reinford Bank</h4>
+                        <h4 id="SLP_Name">Reinford Bank</h4>
                         <div id="SLP_LevelDetails">
                             <div id="SLP_DiffDetail">Difficulty: <status class="SLP_DIF_Hard">Hard</status></div>
                             <div id="SLP_TimeDetail">Estimated Time: <i class="fa-solid fa-clock"></i>3 mins</div>
                         </div>
                         <div id="SLP_LevelDescription">
                             <h3>Case:</h3>
-                            <p>
-                                You are the CEO of Feinford Bank, a mid-sized 
+                            <p id="SLP_CaseDetail">
+                                <!-- You are the CEO of Feinford Bank, a mid-sized 
                                 financial institution that has recently faced
                                 a series of unexpected challenges. The Feinford Bank 
                                 has been hit by a significant downturn in the
@@ -76,7 +77,7 @@
                                 values and a sharp increase in loan defaults. 
                                 The board of directors has given you a deadline 
                                 of 48 hours to propose a plan to save the bank 
-                                from potential bankruptcy.
+                                from potential bankruptcy. -->
                             </p>
                         </div>
                     </div>
@@ -113,25 +114,94 @@
                     <div onclick="BeginGameFunction()" id="BeginGameBTN">Begin Game</div>
                 </div>
             </div>
-            <div id="ScenarioQuestionPage">
-                <div id="ScenarioCaseDisplay">
-                    The economy is slowing down, and your bank's loan portfolio is under pressure as clients are finding it hard to repay.
+            <div id="ScenarioQuestionPage" class="hidden">
+                <div id="SQ_MainContainer">
+                    <div id="ScenarioCaseDisplay">
+                        <p></p>
+                    </div>
+                    <div id="ScenarioCaseOptions">
+                        <p style="color: gray; font-size: 30px;">Select the optimal choice for this case.</p>
+                        
+
+                        <div class="ScenarioCaseOption">
+                            <p>Tighten Credit Policies (Provide Less loans)</p>
+                            <div class="SCO_SelectionBox">
+                                <div class="SCO_Selector"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                        </div>
+                        <div class="ScenarioCaseOption">
+                            <p>Offer Loan Restructing</p>
+                            <div class="SCO_SelectionBox">
+                                <div class="SCO_Selector"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                        </div>
+                        <div class="ScenarioCaseOption">
+                            <p>Increase Interest Rates for new loans</p>
+                            <div class="SCO_SelectionBox">
+                                <div class="SCO_Selector"><i class="fa-solid fa-check"></i></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="ScenarioCaseOptions">
-                    <p style="color: gray; font-size: 30px;">Select the optimal choice for this case.</p>
-                    <div class="ScenarioCaseOption">
-                        <p>Tighten Credit Policies (Provide Less loans)</p>
-                        <div class="SCO_SelectionBox"></div>
-                    </div>
-                    <div class="ScenarioCaseOption">
-                        <p>Offer Loan Restructing</p>
-                        <div class="SCO_SelectionBox"></div>
-                    </div>
-                    <div class="ScenarioCaseOption">
-                        <p>Increase Interest Rates for new loans</p>
-                        <div class="SCO_SelectionBox"></div>
+                <div id="SQ_BTNContainer">
+                    <div class="SQ_ContinueBTN" onclick="Game_Configuration('Next')">Continue</div>
+                </div>
+            </div>
+            <div id="ScenarioEndPage" class="hidden">
+                <div id="SE_Sec1">
+                    <h1 id="End_Message">You have been fired</h1>
+                    <p id="End_Advice"></p>
+                    <div id="End_ContentContainer">
+                        <div id="End_PDM_C">
+                            <p>Previous Decisions Made</p> 
+                            <div onclick="End_ShowCasees()" id="ViewAllScenarios">View Cases</div>
+                        </div>
+                        <div id="End_PDMC">
+                            
+                        </div>
+                        <div id="SmoothEffectC"></div>
                     </div>
                 </div>
+            </div>
+
+            <div id="StylingBarColumnsContainer">
+                <div id="StylingBarColumns">
+                    <div class="StylingBarColumnsSec">
+                        <div id="SBC_1" class="StylingBarColumn">
+                            <div class="StylingBarDark"></div>
+                            <div class="StylingBarLight"></div>
+                        </div>
+                        <div id="SBC_2" class="StylingBarColumn">
+                            <div class="StylingBarDark"></div>
+                            <div class="StylingBarLight"></div>
+                        </div>
+                        <div id="SBC_3" class="StylingBarColumn">
+                            <div class="StylingBarDark"></div>
+                            <div class="StylingBarLight"></div>
+                        </div>
+                    </div>
+                    <div class="StylingBarColumnsSec">
+                        <div id="SBC_4" class="StylingBarColumn">
+                            <div class="StylingBarDark"></div>
+                            <div class="StylingBarLight"></div>
+                        </div>
+                        <div id="SBC_5" class="StylingBarColumn">
+                            <div class="StylingBarDark"></div>
+                            <div class="StylingBarLight"></div>
+                        </div>
+                        <div id="SBC_6" class="StylingBarColumn">
+                            <div class="StylingBarDark"></div>
+                            <div class="StylingBarLight"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="PopUp_Container">
+            <div id="PopUpContent">
+                <h1 id="POP_H"></h1>
+                <p id="POP_P"></p>
             </div>
         </div>
     </div>
