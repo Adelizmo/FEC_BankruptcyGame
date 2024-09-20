@@ -290,7 +290,7 @@ body {
 
     transition: 0.2s all ease-in-out;
 }
-#MainPage_StartBTN:active {
+#MainPage_StartBTN:hover {
     border-inline: 1px solid var(--b2);
     border-bottom: 2px solid var(--b2);
 }
@@ -503,7 +503,7 @@ body {
     border-bottom: 7px solid var(--b2);
     transition: 0.1s all ease-in-out
 }
-#BeginGameBTN:active {
+#BeginGameBTN:hover {
     height: calc(100% - 2px);
     border-inline: 1px solid var(--b2);
     border-bottom: 2px solid var(--b2);
@@ -545,7 +545,7 @@ body {
     transition: 0.1s ease-in-out;
     cursor: pointer;
 }
-.SQ_ContinueBTN:active {
+.SQ_ContinueBTN:hover {
     border-bottom: 2px solid var(--b2);
 }
 
@@ -559,6 +559,8 @@ body {
     height: fit-content;
     color: black;
     text-align: center;
+    font-size: 30px;
+    line-height: 30px;
 }
 #ScenarioCaseOptions {
     width: 50%;
@@ -582,6 +584,8 @@ body {
 .ScenarioCaseOption p {
     width: calc(100% - 50px);
     color: black;
+    font-size: 27px;
+    line-height: 40px;
 }
 
 .SCO_SelectionBox {
@@ -648,6 +652,14 @@ body {
     align-items: center;
     overflow: hidden;
 }
+#SE_Sec2 {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 #End_Message {
@@ -664,14 +676,40 @@ body {
 #End_Advice {
     flex-shrink: 0;
     color: rgb(80, 80, 80);
-    width: 60%;
-    height: 100px;
+    width: 70%;
+    height: 85px;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     text-align: center;
     text-wrap: wrap;
     font-weight: 600;
+}
+#End_PlayerTitle {
+    width: fit-content;
+    padding-inline: 20px;
+    border-radius: 10px;
+    height: 65px;
+    gap: 20px;
+    display: flex;
+    text-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 800;
+    overflow: hidden;
+}
+#End_PlayerTitleCallingCard {
+    width: fit-content;
+    height: 65px;
+    background: var(--b2);
+    border-radius: 10px;
+    padding-inline: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: goldenrod;
+    font-weight: 800;
 }
 .End_Lost {
     color: darkred;
@@ -680,7 +718,8 @@ body {
     color: black;
 }
 #End_ContentContainer {
-    height: calc(100% - 221px);
+    height: calc(100% - 281px);
+    flex-grow: 1;
     width: 75%;
     position: relative;
     display: flex;
@@ -717,7 +756,7 @@ body {
     background: var(--b4);
     transition: 0.2s all ease-in-out;
 }
-#ViewAllScenarios:active {
+#ViewAllScenarios:hover {
     border-bottom: 2px solid var(--b2);
 }
 
@@ -771,13 +810,15 @@ body {
 
 
 .End_Scenario {
-    width: 100%;
+    width: calc(100% - 40px);
+    padding: 20px;
     min-height: 30px;
     line-height: 35px;
     display: none;
     align-items: center;
     color: black;
-    border-bottom: 1px solid var(--b2);
+    background: lightgray;
+    border-radius: 20px;
     font-size: 25px;
 }
 .End_Decision {
@@ -803,6 +844,27 @@ body {
     height: 100%;
     pointer-events: none;
     background: linear-gradient(0deg, var(--b3) 0%, rgba(255, 255, 255, 0) 20%);
+}
+
+#RetryBTN {
+    cursor: pointer;
+    padding: 5px;
+    padding-inline: 10px;
+    border-inline: 1px solid var(--b2);
+    border-bottom: 7px solid var(--b2);
+    background: var(--b4);
+    border-radius: 10px;
+    transition: 0.3s all ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+#RetryBTN i {
+    font-size: 24px;
+}
+#RetryBTN:hover {
+    border-bottom: 2px solid var(--b2);
 }
 
 

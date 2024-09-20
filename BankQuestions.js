@@ -35,7 +35,7 @@ var AllGameData
 var SelectedGameData
 var recordedGamePlay = []
 var playerPTS = 0
-var playerPointsRange = [5, 10]
+var playerPointsRange = [9.25, 19]
 
 
 var currentlySelected = ""
@@ -50,7 +50,9 @@ var PickInputs = [
     // after 6
     document.getElementById('End_PDMC'),
     document.getElementById('End_Message'),
-    document.getElementById('End_Advice')
+    document.getElementById('End_Advice'),
+    document.getElementById('End_PlayerTitle'),
+    document.getElementById('End_ContentContainer')
 
 ]
 const PickBankCase = (e) => {
@@ -87,6 +89,13 @@ const ChangePage = (e) => {
         document.getElementById('ScenarioQuestionPage').classList.add('hidden')
         document.getElementById('ScenarioEndPage').classList.add('hidden')
         ColumnStyling(false)
+    }
+    else if (e == 'Back') {
+        document.getElementById('MainPage').classList.remove('hidden')
+        document.getElementById('SelectLevelPage').classList.add('hidden')
+        document.getElementById('ScenarioQuestionPage').classList.add('hidden')
+        document.getElementById('ScenarioEndPage').classList.add('hidden')
+        ColumnStyling(true)
     }
     else if (e == 'Questions') {
         document.getElementById('MainPage').classList.add('hidden')
@@ -146,15 +155,20 @@ const ChangeDecision = (e) => {
 
 
 var currentLevel = 1;
-const Game_Configuration = (e) => {
+const Game_Configuration = (e) => { 
     if (e == 'StartGame') {
         currentLevel = 1;
 
-        let index = SelectedGameData.Levels.findIndex(item => item.LevelNb === currentLevel)
-        var starterScenario = SelectedGameData.Levels[index]
-        RenderLevel(starterScenario)
-        ChangePage('Questions')
-        recordedGamePlay = []
+        if (SelectedGameData.Levels == undefined) {
+            PopUp('This Case is still<br>under development.', false)
+        }
+        else {
+            let index = SelectedGameData.Levels.findIndex(item => item.LevelNb === currentLevel)
+            var starterScenario = SelectedGameData.Levels[index]
+            RenderLevel(starterScenario)
+            ChangePage('Questions')
+            recordedGamePlay = []
+        }
     }
     else if (e == 'Next') {
         var data = currentSenario.ScenarioOptions[pastSelection]
@@ -189,7 +203,13 @@ const Game_Configuration = (e) => {
                     OptionExplain: data_Explain
                 })
 
+                playerPTS += data_Points
+                Game_WinPlayerTitle(playerPTS)
+
                 var data_Why = data.OptionWhy
+
+                PickInputs[10].style.height = " calc(100% - 281px)"
+                PickInputs[9].style.display = "flex"
 
                 PickInputs[7].innerHTML = "Congrats, You've Saved The Bank"
                 PickInputs[7].style.color = "green"
@@ -202,7 +222,7 @@ const Game_Configuration = (e) => {
                             <div class="End_DecisionContainer">
                                 <p class="End_Scenario">${recordedGamePlay[i].OptionScenario}</p>
                                 <p class="End_Decision">${recordedGamePlay[i].Option}</p>
-                                <p class="End_Explain">${recordedGamePlay[i].OptionExplain}</p>
+                                <p class="End_Explain">${"Explanation: " + recordedGamePlay[i].OptionExplain}</p>
                             </div>
                         </div>
                     `
@@ -212,6 +232,8 @@ const Game_Configuration = (e) => {
                         `
                     }
                 }
+                console.log(playerPTS)
+                PopUp(playerPTS, true)
                 ChangePage('End')
             }
             else if (data.OptionCause == "Lost") {
@@ -222,8 +244,11 @@ const Game_Configuration = (e) => {
                 })
 
                 var data_Why = data.OptionWhy
+                
+                PickInputs[10].style.height = "calc(100% - 230px)"
+                PickInputs[9].style.display = "none"
 
-                PickInputs[7].innerHTML = "Failed to prevent Bankruptcy."
+                PickInputs[7].innerHTML = "You Failed."
                 PickInputs[7].style.color = "darkred"
                 PickInputs[8].innerHTML = data_Why
                 PickInputs[6].innerHTML = ""
@@ -234,7 +259,7 @@ const Game_Configuration = (e) => {
                             <div class="End_DecisionContainer">
                                 <p class="End_Scenario">${recordedGamePlay[i].OptionScenario}</p>
                                 <p class="End_Decision">${recordedGamePlay[i].Option}</p>
-                                <p class="End_Explain">${recordedGamePlay[i].OptionExplain}</p>
+                                <p class="End_Explain">${"Explanation: " + recordedGamePlay[i].OptionExplain}</p>
                             </div>
                         </div>
                     `
@@ -244,10 +269,28 @@ const Game_Configuration = (e) => {
                         `
                     }
                 }
+                console.log(playerPTS)
+                PopUp(playerPTS, true)
                 ChangePage('End')
             }  
         } 
     }
+}
+const Game_WinPlayerTitle = (e) => {
+    if (e <= 11) 
+        PickInputs[9].innerHTML = "Title: <span id='End_PlayerTitleCallingCard'>The Turnaround Titan</span>"
+
+    else if (e > 11 && e <= 13)
+        PickInputs[9].innerHTML = "Title: <span id='End_PlayerTitleCallingCard'>The Innovation Architect</span>"
+
+    else if (e > 13 && e <= 15)
+        PickInputs[9].innerHTML = "Title: <span id='End_PlayerTitleCallingCard'>The Bankruptcy Buster</span>"
+
+    else if (e > 15 && e <= 18)
+        PickInputs[9].innerHTML = "Title: <span id='End_PlayerTitleCallingCard'>The Strategic Conqueror</span>"
+    
+    else if (e > 18)
+        PickInputs[9].innerHTML = "Title: <span id='End_PlayerTitleCallingCard'>The Apex Executor</span>"
 }
 var currentCaseShowStatus = false
 const End_ShowCasees = () => {
@@ -268,8 +311,6 @@ const End_ShowCasees = () => {
         currentCaseShowStatus = false
     }
 }
-
-
 
 const Game_Setup = () => {
     var length = AllGameData.length
@@ -307,6 +348,15 @@ const Game_Setup = () => {
         }
     }
 } 
+
+// Retry Function
+const Game_Retry = () => {
+    ChangePage('Back')
+    playerPTS = 0
+    recordedGamePlay = []
+}
+
+
 
 fetch("BankQ.json")
 .then(response => response.json())

@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/ea57de8336.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="BankQuestions.css">
 </head>
-<body>
+<body onload="PopUp(`Developer's Version`, true)">
     <div id="WholePage">
         <div id="NavBarContainer">
             <div id="NavBarLogo">
@@ -24,7 +24,7 @@
 
             <div id="NavBarBTNS">
                 <div class="NavBarBTN"><i class="fa-solid fa-language"></i>English</div>
-                <div class="NavBarBTN ResetGameBTN"><i class="fa-solid fa-rotate-right"></i>Reset Game</div>
+                <div onclick="Game_Retry()" class="NavBarBTN ResetGameBTN"><i class="fa-solid fa-rotate-right"></i>Reset Game</div>
             </div>
         </div>
         <div id="ContentContainer" style="color: black; font-size: 30px;">
@@ -42,7 +42,7 @@
                         You have been appointed at such a troublesome time. 
                         The Bank is losing money fast due to 
                         certain issues, these issues can lead the Bank to 
-                        announcing Bankrupcy.
+                        announcing Bankruptcy.
                     </p>
                     <p>
                         Your Job as <span style="background: var(--b4); padding-inline: 2px;">CEO</span> is to make the best desicions for each 
@@ -107,7 +107,7 @@
 
                 </div>
                 <div id="SLP_ButtonContainer">
-                    <div class="BackBTN">
+                    <div class="BackBTN" onclick="ChangePage('Back')">
                         <i class="fa-solid fa-chevron-left"></i>
                         Back
                     </div>
@@ -150,6 +150,7 @@
             <div id="ScenarioEndPage" class="hidden">
                 <div id="SE_Sec1">
                     <h1 id="End_Message">You have been fired</h1>
+                    <p id="End_PlayerTitle">Title: <span id="End_PlayerTitleCallingCard">The Conqueror</span></p>
                     <p id="End_Advice"></p>
                     <div id="End_ContentContainer">
                         <div id="End_PDM_C">
@@ -161,6 +162,9 @@
                         </div>
                         <div id="SmoothEffectC"></div>
                     </div>
+                </div>
+                <div id="SE_Sec2">
+                    <div id="RetryBTN" onclick="Game_Retry()"><i class="fa-solid fa-rotate-right"></i>Retry</div>
                 </div>
             </div>
 

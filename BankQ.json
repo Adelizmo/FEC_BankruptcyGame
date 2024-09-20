@@ -1,14 +1,16 @@
 [{
-    "GameVersion": "1.5.0",
+    "GameVersion": "3.2.53",
     "GameName": "A Banking CEO's Dilema",
     "GameData": [
         {
             "Name": "Reinford",
             "FullName": "Reinford Bank",
+            "PlayerPointsMax": 19,
+            "PlayerPointsMin": 9.25,
             "Game": {
-                "Difficulty": "Easy",
+                "Difficulty": "Medium",
                 "EstimatedTime": "3 mins",
-                "CaseDescription": "You are the CEO of Feinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in themarket, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
+                "CaseDescription": "You are the CEO of Feinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in the market, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
 
                 "Levels": [
                     {
@@ -72,6 +74,7 @@
                             {
                                 "Option": "Address this issue with a public apology",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Good Try. Investors want results, not words.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "While this could help boost reputation if done correctly and all expectations are met, it usually affirms to the public the problems which also decreases your reputation and reduce investor confidence "
                             },
@@ -83,8 +86,9 @@
                                 "OptionExplaination": "By providing Reports and Financial Statements, your investors will feel reassured and place their trust in you."
                             },
                             {
-                                "Option": "Announce a Share Buyback Program, a program that pushes the bank to buying back their stocks to show confidence",
+                                "Option": "Announce a Share Buyback Program, a program that pushes the bank to buy back their stocks to show confidence",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Share Buyback Program is Suicide! It is meant to show confidence by requiring funding which is low.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "Buying back your stocks that are considered undervalued can show your investors your expression of confidence in the banks ability. However, the root of the issue is only met with more trouble as the buyback would require a lot of cash"
                             }
@@ -138,6 +142,7 @@
                             {
                                 "Option": "Enhance customer support channels while also providing surveys to customers, so they can rate that service and describe the issues they encountered.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Hello, Customer service here. How can I help you? *beep* *beep*",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "While you are communicating with customers, you are not providing a sustainable plan to fix the core of the issue."
                             }
@@ -150,7 +155,7 @@
                             {
                                 "Option": "Slash prices with promotions and offer competitive interest rates to attract customers",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "You have reduced your ability to grow as a bank.",
+                                "OptionWhy": "You have reduced the chance of the bank to grow.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "While this would attract customers, it is not favorable in the long-term as it limits revenue, reduces the ability to grow, and increases your risk sensitivity."
                             },
@@ -179,24 +184,24 @@
                     },
                     {                                                                                                                                                                                                                                                                                                                   
                         "LevelNb": 5,
-                        "Scenario": "Unexpectedly, a sudden increase of high-profile staff resignation letters has been passed to you. The high-profile staff resignation wave include the Chief Customer Officer (CCO), Chief of Technology Officer (CTO), and others. You must act swiftly to avoid further options.",
+                        "Scenario": "Unexpectedly, a sudden increase of high-profile staff resignation letters has been passed to you. The high-profile staff resignation wave include the Chief Customer Officer (CCO), Chief of Technology Officer (CTO), and others. You must act swiftly to avoid further damages.",
                         "ScenarioOptions": [
                             {
-                                "Option": "Promote from within for temporary roles (interim) and strieve for long-term replacements.",
+                                "Option": "Promote from within for temporary roles (interim) and strieve for long-term replacements",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 3,
                                 "OptionLead": 9,
                                 "OptionExplaination": "Promoting from with is an efficient way of handing down the work in a smooth transition. In addition, this action increases employee satisfaction, as they feel that they are prioritized."
                             },
                             {
-                                "Option": "Recruit high profile candidates with good offers to attract the best talent out there.",
+                                "Option": "Recruit high profile candidates with good offers to attract the best talent out there",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 5.5,
                                 "OptionExplaination": "While you might be able to attract talent, you will not satisfy your original staff, as they will feel desatisfied and betrayed that you did not select from within. Thus, this option would only increase staff resignation."
                             },
                             {
-                                "Option": "Establish an Internal Leadership Committee to oversee critical functions and create a succession plan.",
+                                "Option": "Establish an Internal Leadership Committee to oversee critical functions and create a succession plan",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 4,
                                 "OptionLead": 9,
@@ -211,13 +216,14 @@
                             {
                                 "Option": "Create a morale boosting team building retreat.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "",
+                                "OptionWhy": "Nice way to add salt to the wound.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "The heat between new employees and old ones will not be solved due to team building events. It needs geniune transparency."
                             },
                             {
                                 "Option": "Offer Career development opportunities.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Seems good. The issue still exists.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "Offering this career development opportunities will not cool down the heat between these two sides."
                             },
@@ -251,6 +257,7 @@
                             {
                                 "Option": "SC Bank: Aimming for quick expansion and maximization of profit through high risk ventures.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Ambition is good, this is suicide.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "The Merger is a delicate process that has protective measures to ensure a smooth transition. Expansion is the obvious goal on both sides. However, risky actions at such early stages of the merger undermines that whole point of the plan."
                             }
@@ -262,25 +269,29 @@
                         "ScenarioOptions": [
                             {
                                 "Option": "Offer a temporary leadership role to an external consultant.",
-                                "OptionCause": "Victory",
+                                "OptionCause": "Cont.",
                                 "OptionPTS": 1,
+                                "OptionLead": 7.5,
                                 "OptionExplaination": "Shows your commited to smooth and efficient transition and integration."
                             },
                             {
                                 "Option": "Announce a Major investment in a high risk venture.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "I see you like living close to the edge, but the board does not.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "High Risk in such early days of merging would only cause more distablity."
                             },
                             {
                                 "Option": "Push for immediate expansion into new markets post-merger.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "The bank aims for stability in this merger. You added more problems",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "This desicion can cause financial strain on the bank and can lead investors to believe that you care about growth more than stability first."
                             },
                             {
                                 "Option": "Announce a significant executive compensation increase.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "I know you are not selfish, but you made it seem so.",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "Could be precieved as self-serving or inappropriate in such expansion."
                             }
@@ -293,19 +304,22 @@
                         "ScenarioOptions": [
                             {
                                 "Option": "Offer training programs for those who have been laid off as recompensation with the basic packages.",
-                                "OptionCause": "Lost",
+                                "OptionCause": "Cont.",
                                 "OptionPTS": 1,
+                                "OptionLead": 9,
                                 "OptionExplaination": "Shows your commited to smooth and efficient transition and integration."
                             },
                             {
                                 "Option": "Offer a generous recompensations packages.",
                                 "OptionCause": "Cont.",
-                                "OptionPTS": 0,
+                                "OptionPTS": 1,
+                                "OptionLead": 9,
                                 "OptionExplaination": "High Risk in such early days of merging would only cause more distablity."
                             },
                             {
-                                "Option": "Give employees warning by 3 months so they can prepare and get another job.",
+                                "Option": "Give employees extra 2 months of work and warn them of their lay offs beforehand.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Nice way to add salt to the wound",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "This will increase senstivity between kept employees and laid off ones."
                             }
@@ -313,17 +327,19 @@
                     },
                     {
                         "LevelNb": 8,
-                        "Scenario": "Due to past decisions: Cutting costs have led the customers to be let down on the quality of service given. The board has instructed you act immediately ASAP.",
+                        "Scenario": "Due to past decisions: Cutting costs have led the customers to be let down on the quality of service given.",
                         "ScenarioOptions": [
                             {
                                 "Option": "Offer a public apology.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Good intention, but no actions?",
                                 "OptionPTS": 0,
-                                "OptionExplaination": "What is their to offer? An apology is the last plan for any organization that has its backs against the wall. Your not against the wall."
+                                "OptionExplaination": "What is there to offer? An apology is the last plan for any organization that has its backs against the wall. Your not against the wall."
                             },
-                            {
+                            { 
                                 "Option": "Invite premium customers to exclusive bank events.",
                                 "OptionCause": "Lost",
+                                "OptionWhy": "Really? What about the non-premium customers?",
                                 "OptionPTS": 0,
                                 "OptionExplaination": "The problem is with all customers not just your premium customers. If customers found out about these events, it would ruin the reputation as a greedy bank that just cares about their premium members."
                             },
@@ -333,6 +349,40 @@
                                 "OptionPTS": 1,
                                 "OptionLead": 9,
                                 "OptionExplaination": "The problem is with the customers satisfaction. Your campaign address the issue and reassures the customers of the commitment for them."
+                            }
+                        ]
+                    },
+                    {
+                        "LevelNb": 9,
+                        "Scenario": "A bank robbery has occured!! Essential assets and documents have been stolen with 6 people injury during this hostile attack. Your reputation is greatly damaged. The board members are giving you a chance to fix this now!",
+                        "ScenarioOptions": [
+                            {
+                                "Option": "Launch a Charity Fundraisers",
+                                "OptionCause": "Lost",
+                                "OptionWhy": "Really? You are trying to run away from addressing this major issue.",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "That is not a suitable situation to start a fundraiser. Your attempt is obvious and dishonarable."
+                            },
+                            {
+                                "Option": "Hire Additional Security guards accross all branches.",
+                                "OptionCause": "Victory",
+                                "OptionWhy": "Actions speak louder than words. Good job.",
+                                "OptionPTS": 3,
+                                "OptionExplaination": "It is a basic solution, however it shows that your commited to improving rather than giving empty words."
+                            },
+                            {
+                                "Option": "Introduce a strict bank verification system (Face ID, Touch ID).",
+                                "OptionCause": "Lost",
+                                "OptionWhy": "Customers: I hate this new system.",
+                                "OptionPTS": 0,
+                                "OptionExplaination": "Introducing such system could work in stopping future robberies. However, customers tend to value a seemless experience and could feel threatened as if you are shifting the blame to them."
+                            },
+                            {
+                                "Option": "Focus on Funding Investigations",
+                                "OptionCause": "",
+                                "OptionWhy": "",
+                                "OptionPTS": 0,
+                                "OptionExplaination": ""
                             }
                         ]
                     }
