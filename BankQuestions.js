@@ -352,7 +352,7 @@ const Game_Configuration = (e) => {
         currentLevel = 1;
 
         if (timerstatus == true) {
-            Game_Timing("Set", 1)
+            Game_Timing("Set", 3)
         }
 
         if (SelectedGameData.Levels == undefined) {
