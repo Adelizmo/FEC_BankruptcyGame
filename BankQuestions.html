@@ -19,47 +19,62 @@
                 src="Mainlogo.png">
             </div>
             <div id="TimeIndicator">
-
+                3:00
             </div>
 
             <div id="NavBarBTNS">
-                <div class="NavBarBTN"><i class="fa-solid fa-language"></i>English</div>
-                <div onclick="Game_Retry()" class="NavBarBTN ResetGameBTN"><i class="fa-solid fa-rotate-right"></i>Reset Game</div>
+                <div style="display: none;" onclick="Game_ChangeLanguage('English')" class="NavBarBTN ArabicText"><i class="fa-solid fa-language"></i>English</div>
+                <div onclick="Game_ChangeLanguage('Arabic')" class="NavBarBTN EnglishText"><i class="fa-solid fa-language"></i>العربية</div>
+                <div onclick="Game_Retry()" class="NavBarBTN ResetGameBTN EnglishText"><i class="fa-solid fa-rotate-right"></i>Reset Game</div>
+                <div style="display: none;" onclick="Game_Retry()" class="NavBarBTN ResetGameBTN ArabicText"><i class="fa-solid fa-rotate-right"></i>إعادة بدء اللعبة</div>
             </div>
         </div>
         <div id="ContentContainer" style="color: black; font-size: 30px;">
-            <div id="MainPage" class="">
+            <div id="MainPage" class="hidden">
                 <div id="MainPage_Header">
-                    <h2>Finance and Economics Club</h2>
-                    <!-- <h2>نادي المالية والاقتصاد</h2> -->
-                    <h3>Presents</h3>
-                    <h1>The Bankrupt Bank <div id="HighlightedBox"></div></h1>
+                    <h2 class="EnglishText">Finance and Economics Club</h2>
+                    <h3 class="EnglishText">Presents</h3>
+                    <h1 style="display: flex;" class="EnglishText">The Bankrupt Bank <div class="HighlightedBox"></div></h1>
+
+                    <h2 class="ArabicText">نادي المالية والاقتصاد</h2>
+                    <h3 class="ArabicText">يقدم</h3>
+                    <h1 style="display: none;" class="ArabicText">البنك المفلس<div class="HighlightedBox"></div></h1>
                 </div>
                 <div id="MainPage_HowToPlay">
-                    <h4>How to play?</h4>
-                    <p>
+                    <h4 class="EnglishText_Pure">How to play?</h4>
+                    <p class="EnglishText_Pure">
                         Placed into the position of <span style="background: var(--b4); padding-inline: 2px;">CEO</span>, 
                         You have been appointed at such a troublesome time. 
                         The Bank is losing money fast due to 
                         certain issues, these issues can lead the Bank to 
                         announcing Bankruptcy.
                     </p>
-                    <p>
+                    <p class="EnglishText_Pure">
                         Your Job as <span style="background: var(--b4); padding-inline: 2px;">CEO</span> is to make the best desicions for each 
                         senario in order to save the bank from bankruptcy and achieve maximum profits.
                     </p> 
+
+                    <h4 class="ArabicText_Pure">كيف تلعب؟</h4>
+                    <p class="ArabicText_Pure">
+                        لقد وُضِعت في منصب المدير التنفيذي في بنك. وللأسف، يواجه البنك أوقاتًا عصيبة. وظيفتك كمدير تنفيذي هي إنقاذ البنك من الإفلاس وتحقيق أقصى قدر من الأرباح
+                    </p>
                 </div>
                 <div id="MainPage_StartContainer">
-                    <button onclick="ChangePage('Main')" id="MainPage_StartBTN">Start Game</button>
+                    <button class="EnglishText" onclick="ChangePage('Main')" id="MainPage_StartBTN">Start Game</button>
+                    <button class="ArabicText" onclick="ChangePage('Main')" id="MainPage_StartBTN">ابدأ اللعبة</button>
                 </div>
             </div>
-            <div id="SelectLevelPage" class="hidden">
-                <div id="SLP_Header">
+            <div id="SelectLevelPage" class="">
+                <div id="SLP_Header" class="EnglishText">
                     <h2>Get Hired!!</h2>
                     <p>Select a Bank and become their <span style="border-radius: 5px; padding-inline: 5px; background: var(--b4)">CEO</span></p>
+                </div>                            
+                <div style="display: none;" id="SLP_Header_AR" class="ArabicText">
+                    <h2>احصل على وظيفة</h2>
+                    <p><span style="border-radius: 5px; padding-inline: 5px; background: var(--b4)">رئيسهم التنفيذي</span>اختر بنك وكن</p>
                 </div>
-                <div id="SLP_LevelsContainer">
-                    <div id="SLP_LevelOverview">
+                <div id="SLP_LevelsContainer" class="Text_Layout">
+                    <div id="SLP_LevelOverview" class="EnglishText">
                         <h3>Case Overview</h3>
                         <h4 id="SLP_Name">Reinford Bank</h4>
                         <div id="SLP_LevelDetails">
@@ -78,6 +93,20 @@
                                 The board of directors has given you a deadline 
                                 of 48 hours to propose a plan to save the bank 
                                 from potential bankruptcy. -->
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="SLP_LevelOverview_AR" class="ArabicText">
+                        <h3>نظرة عامة على الحالة</h3>
+                        <h4 id="SLP_Name_AR">بنك راينفورد</h4>
+                        <div id="SLP_LevelDetails_AR">
+                            <div id="SLP_DiffDetail_AR">صعوبة: <status class="SLP_DIF_Medium">متوسط</status></div>
+                            <div id="SLP_TimeDetail_AR">الزمن المتوقع: <i class="fa-solid fa-clock"></i>3 دقائق</div>
+                        </div>
+                        <div id="SLP_LevelDescription_AR">
+                            <h3>:الحالة</h3>
+                            <p id="SLP_CaseDetail_AR" style="unicode-bidi: embed;">
+                               بصفتك الرئيس التنفيذي لبنك راينفورد، مؤسسة مالية متوسطة الحجم، تواجه حاليًا سلسلة من التحديات غير المتوقعة. لقد شهد البنك انخفاضًا كبيرًا في السوق، مما أدى إلى تراجع ملحوظ في قيم الأصول وزيادة حادة في حالات تعثر القروض. وقد حدد مجلس الإدارة مهلة قدرها 48 ساعة لتقديم خطة استراتيجية لإنقاذ البنك من الإفلاس المحتمل
                             </p>
                         </div>
                     </div>
@@ -103,15 +132,35 @@
                         </div>
                     </div>
                 </div>
-                <div id="SLP_GameSettings" class="hidden">
 
-                </div>
-                <div id="SLP_ButtonContainer">
+                <div id="SLP_ButtonContainer" class="EnglishText">
                     <div class="BackBTN" onclick="ChangePage('Back')">
                         <i class="fa-solid fa-chevron-left"></i>
                         Back
                     </div>
+
+                    <div class="SwitchContainer">
+                        <p style="color: black;">Timer:</p>
+                        <div onclick="TimerSwitch('active')" class="SwitchHouse">
+                            <div class="SwitchBTN"></div>
+                        </div>
+                    </div>
+
                     <div onclick="BeginGameFunction()" id="BeginGameBTN">Begin Game</div>
+                </div>
+
+                <div style="display: none;" id="SLP_ButtonContainer" class="ArabicText">
+                    <div class="BackBTN" onclick="ChangePage('Back')">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        رجوع
+                    </div>
+                    <div class="SwitchContainer">
+                        <div onclick="TimerSwitch('active')" class="SwitchHouse">
+                            <div class="SwitchBTN"></div>
+                        </div>
+                        <p style="color: black;">:موقت</p>
+                    </div>
+                    <div onclick="BeginGameFunction()" id="BeginGameBTN">ابدأ اللعبة</div>
                 </div>
             </div>
             <div id="ScenarioQuestionPage" class="hidden">
@@ -120,8 +169,8 @@
                         <p></p>
                     </div>
                     <div id="ScenarioCaseOptions">
-                        <p style="color: gray; font-size: 30px;">Select the optimal choice for this case.</p>
-                        
+                        <!-- <p class="EnglishText" style="color: gray; font-size: 30px;">Select the optimal choice for this case.</p>
+                        <p class="ArabicText" style="color: gray; font-size: 30px;">اختر الخيار الأمثل لهذه الحالة</p>
 
                         <div class="ScenarioCaseOption">
                             <p>Tighten Credit Policies (Provide Less loans)</p>
@@ -140,22 +189,24 @@
                             <div class="SCO_SelectionBox">
                                 <div class="SCO_Selector"><i class="fa-solid fa-check"></i></div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div id="SQ_BTNContainer">
-                    <div class="SQ_ContinueBTN" onclick="Game_Configuration('Next')">Continue</div>
+                    <div class="SQ_ContinueBTN EnglishText" onclick="Game_Configuration('Next')">Continue</div>
+                    <div style="display: none;" class="SQ_ContinueBTN ArabicText" onclick="Game_Configuration('Next')">التالي</div>
                 </div>
             </div>
             <div id="ScenarioEndPage" class="hidden">
                 <div id="SE_Sec1">
                     <h1 id="End_Message">You have been fired</h1>
                     <p id="End_PlayerTitle">Title: <span id="End_PlayerTitleCallingCard">The Conqueror</span></p>
-                    <p id="End_Advice"></p>
+                    <p id="End_Advice" class="EnglishText"></p>
+                    <p id="End_Advice_Ar" class="ArabicText"></p>
                     <div id="End_ContentContainer">
-                        <div id="End_PDM_C">
-                            <p>Previous Decisions Made</p> 
-                            <div onclick="End_ShowCasees()" id="ViewAllScenarios">View Cases</div>
+                        <div id="End_PDM_C" class="Text_Layout">
+                            <p class="EnglishText">Previous Decisions</p> 
+                            <p class="ArabicText">قراراتك السابقة</p> 
                         </div>
                         <div id="End_PDMC">
                             
@@ -164,7 +215,8 @@
                     </div>
                 </div>
                 <div id="SE_Sec2">
-                    <div id="RetryBTN" onclick="Game_Retry()"><i class="fa-solid fa-rotate-right"></i>Retry</div>
+                    <div id="RetryBTN" class="EnglishText" onclick="Game_Retry()"><i class="fa-solid fa-rotate-right"></i>Retry</div>
+                    <div id="RetryBTN" class="ArabicText" onclick="Game_Retry()"><i class="fa-solid fa-rotate-right"></i>أعد المحاولة</div>
                 </div>
             </div>
 

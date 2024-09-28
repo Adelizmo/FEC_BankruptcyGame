@@ -3,18 +3,27 @@
     "GameName": "A Banking CEO's Dilema",
     "GameData": [
         {
+            "Name_Ar": "راينفورد",
+            "FullName_Ar": "بنك راينفورد",
             "Name": "Reinford",
             "FullName": "Reinford Bank",
-            "PlayerPointsMax": 19,
-            "PlayerPointsMin": 9.25,
             "Game": {
                 "Difficulty": "Medium",
                 "EstimatedTime": "3 mins",
+
+                "Difficulty_Ar": "متوسط",
+                "EstimatedTime_Ar": "3 دقائق",
+                "CaseDescription_Ar": "بصفتك الرئيس التنفيذي لبنك راينفورد، مؤسسة مالية متوسطة الحجم، تواجه حاليًا سلسلة من التحديات غير المتوقعة. لقد شهد البنك انخفاضًا في السوق، مما أدى إلى تراجع ملحوظ في قيمة الأصول وزيادة حادة في حالات تعثر القروض. وقد حدد مجلس الإدارة مهلة قدرها 48 ساعة لتقديم خطة استراتيجية لإنقاذ البنك من الإفلاس المحتمل",
+
+
+                "PlayerPointsMax": 19,
+                "PlayerPointsMin": 9.25,
                 "CaseDescription": "You are the CEO of Feinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in the market, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
 
                 "Levels": [
                     {
                         "LevelNb": 1,
+                        "Scenario_Ar": "الاقتصاد يواجه تدهور، والعملاء يجدون صعوبة في سداد قروضهم في الوقت المحدد",
                         "Scenario": "The economy is slowing down, and your banks loan portfolio is under pressure as clients are finding it hard to repay.",
                         "ScenarioOptions": [
                             {
@@ -22,13 +31,20 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 2,
                                 "OptionLead": 2,
-                                "OptionExplaination": "Approve fewer loans to reduce risk, but this could limit revenue."
+                                "OptionExplaination": "Approving fewer loans could reduce risk, but this could limit income.",
+                            
+                                "Option_Ar": "تقليل كمية القروض الممنوحة",
+                                "Optionxplanation_Ar": "الموافقة على عدد أقل من القروض قد يقلل المخاطر، ولكنه قد يقلل أيضًا من الدخل"
                             },
                             {
                                 "Option": "Extend Loan deadlines",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 6,
                                 "OptionLead": 3,
+
+                                "Option_Ar": "تمديد مواعيد سداد القروض",
+                                "Optionxplanation_Ar": "تمديد مواعيد سداد القروض يمكن أن يساعد العملاء الذين يواجهون صعوبات، لكنه قد يعرض البنك لخطر الخسارة",
+
                                 "OptionExplaination": "Help struggling customers by extending repayment periods, but risk future defaults."
                             },
                             {
@@ -36,12 +52,17 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 2,
+
+                                "Option_Ar": "زيادة أسعار الفائدة على القروض الجديدة",
+                                "Optionxplanation_Ar": "معظم العملاء والشركات الصغيرة لن يتمكنوا أبدًا من الحصول على قرض بأسعار فائدة مرتفعة",
+                                
                                 "OptionExplaination": "Attract more high-quality clients but potentially scare off smaller businesses and individuals"
                             }
                         ]
                     },
                     {
                         "LevelNb": 2,
+                        "Scenario_Ar": "بسبب قراراتك السابقة: الاحتياطات النقدية تتناقص وسحوبات النقود تزداد",
                         "Scenario": "Due to past decisions: Cash reserves are running low and cash withdrawals are increasing.",
                         "ScenarioOptions": [
                             {
@@ -49,13 +70,21 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 3,
                                 "OptionLead": 3,
+
+                                "Option_Ar": "بيع الأصول غير أساسية مثل الاستثمارات والأراضي",
+                                 "Optionxplanation_Ar": "هذا هو أفضل قرار لحالتك، لكنه سيجعلك تفقد استثماراتك الاستراتيجية",
+
                                 "OptionExplaination": "Free up cash quickly, but lost strategic investments."
                             },
                             {
-                                "Option": "Issue a short term bond.",
+                                "Option": "Issue a short term bond",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 2,
                                 "OptionLead": 2.5,
+
+                                "Option_Ar": "إصدار سندات قصيرة الأجل",
+                                "Optionxplanation_Ar": "سيؤدي هذا القرار إلى الإضرار بسمعتك وثقة المستثمرين",
+
                                 "OptionExplaination": "Could help raise funds quickly, but it may hurt investor confidence if the issue insists."
                             },
                             {
@@ -63,19 +92,29 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 2.5,
+                                
+                                "Option_Ar": "طلب قرض من الحكومة",
+                                "Optionxplanation_Ar": "سيؤدي هذا القرار إلى الإضرار بسمعتك وثقة المستثمرين",
+                                
                                 "OptionExplaination": "Will damage the companies Reputation."
                             }
                         ]
                     },
                     {
                         "LevelNb": 2.5,
+                        "Scenario_Ar": "بسبب قراراتك السابقة: انخفضت ثقة المستثمرين وتعرضت سمعتك للتساؤل",
                         "Scenario": "Due to past decisions: Investor confidence has went down and your reputation is questioned.",
                         "ScenarioOptions": [
                             {
                                 "Option": "Address this issue with a public apology",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Good Try. Investors want results, not words.",
+                                "OptionWhy": "Actions speak louder than words",
+                                "OptionWhy_Ar": "الأَفْعَالُ أَبْلَغُ مِنْ الأَقْوَال",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "معالجة هذه المشكلة مع اعتذار علني",
+                                "Optionxplanation_Ar": "يريد المستثمرون اتخاذ الإجراءات اللازمة وليس الاعتذار", 
+
                                 "OptionExplaination": "While this could help boost reputation if done correctly and all expectations are met, it usually affirms to the public the problems which also decreases your reputation and reduce investor confidence "
                             },
                             {
@@ -83,46 +122,69 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 3,
+
+                                "Option_Ar": "تعزيز التواصل مع المستثمرين",
+                                "Optionxplanation_Ar": "هذا القرار سيزيد من ثقة المستثمرين بك",
+
                                 "OptionExplaination": "By providing Reports and Financial Statements, your investors will feel reassured and place their trust in you."
                             },
                             {
                                 "Option": "Announce a Share Buyback Program, a program that pushes the bank to buy back their stocks to show confidence",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Share Buyback Program is Suicide! It is meant to show confidence by requiring funding which is low.",
+                                "OptionWhy": "Tomorrow is nearby if one has patience",
+                                "OptionWhy_Ar": "إن غَداً لِناظِرِهِ قَريب",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "أعلن عن برنامج إعادة شراء الأسهم، وهو برنامج يدفع البنك لشراء أسهمه لإظهار الثقة",
+                                "Optionxplanation_Ar": "سيتطلب هذا القرار مبلغًا كبيرًا من المال",
+
                                 "OptionExplaination": "Buying back your stocks that are considered undervalued can show your investors your expression of confidence in the banks ability. However, the root of the issue is only met with more trouble as the buyback would require a lot of cash"
                             }
                         ]
                     },
                     {
                         "LevelNb": 3,
+                        "Scenario_Ar":  "تتمتع فكرة الفينتك الجديدة بالقدرة على تقليل تكلفة التشغيل في جميع الفروع",
                         "Scenario": "A new FinTech Idea has the potential to reduce the operation cost across all branches.",
                         "ScenarioOptions": [
                             {
-                                "Option": "Invest in the tech and implement it on all branches",
+                                "Option": "Invest in the tech and implement it across all branches",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 3.5,
+
+                                "Option_Ar": "استثمر في التكنولوجيا وطبقها على كافة الفروع",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "While investing on the technology is the way to go, implementing it quickly on all branches could cause wide distruptions on all branches and could lower customer satisfaction. Generally, it requires a smooth transition."
                             },
                             {
-                                "Option": "Wait and observe competitors whom adopt this technology and later apply it after it has been proven to work",
+                                "Option": "Wait and observe competitors before implementing",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 2,
                                 "OptionLead": 3.5,
+
+                                "Option_Ar": "انتظر وراقب منافسيك قبل تطبيق التقنية",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Too slow. Even though this might have worked, it can only but you back on the race to implement that technology."
                             },
                             {
-                                "Option": "Introduce and pilot the tech in few branches and analyze its performance before going full-scale.",
+                                "Option": "Introduce the technology into your branches branch by branch",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 3,
                                 "OptionLead": 4,
+
+                                "Option_Ar": "تقديم التكنولوجيا الجديدة فرع تلو الأخر",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "A wise and smooth transition into to this Tech with minimizing customer disatisfaction before implementation."
                             }
                         ]
                     },
                     {
                         "LevelNb": 3.5,
+                        "Scenario_Ar": "بسبب قراراتك السابقة: انخفض معدل رضا العملاء، وأصبح الناس يفضلون منافسيك",
                         "Scenario": "Due to past decisions: Customer satisfaction rate has went down, and people are favoring other competitors than you.",
                         "ScenarioOptions": [
                             {
@@ -130,6 +192,10 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 0.25,
                                 "OptionLead": 4,
+
+                                "Option_Ar": "التراجع الفوري عن التكنولوجيا المالية وإصلاح المشكلة قبل إعادة تنفيذها",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "This action can show to customers that your incapable handling that tech and might opt out for other competitors whom might have already implemented it effectively."
                             },
                             {
@@ -137,26 +203,41 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 0.5,
                                 "OptionLead": 4,
+
+                                "Option_Ar": "توظيف خبراء إضافيين في التكنولوجيا المالية لمعالجة المشكلة وإصلاحها مع إبقاء العملاء على اطلاع بشأن أعمال الصيانة",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Handling customer anger while fixing the problem is the best way to handle such issue."
                             },
                             {
                                 "Option": "Enhance customer support channels while also providing surveys to customers, so they can rate that service and describe the issues they encountered.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Hello, Customer service here. How can I help you? *beep* *beep*",
+                                "OptionWhy": "Learn to say the truth before learning to speak",
+                                "OptionWhy_Ar": "تعلّموا الصِّدق قبل الحديث",  
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "تعزيز قنوات دعم العملاء",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "While you are communicating with customers, you are not providing a sustainable plan to fix the core of the issue."
                             }
                         ]
                     },
                     {
                         "LevelNb": 4,
+                        "Scenario_Ar": "يبدو أن منافسك في عملية دمج مع بنك آخر مما يزيد من عملائهم وحصتهم في السوق وتمويلهم",
                         "Scenario": "In recent events, a competitor seems to be in the process of merging with another bank that increases their customer base, market share, and funding. That competitor is posing a threat to your customer base.",
                         "ScenarioOptions": [
                             {
                                 "Option": "Slash prices with promotions and offer competitive interest rates to attract customers",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "You have reduced the chance of the bank to grow.",
+                                "OptionWhy": "Be the change you want to see in the world",
+                                "OptionWhy_Ar": "كن التغير الذي تريد أن تراه في العالم",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "خفض الأسعار مع العروض الترويجية وتقديم أسعار فائدة تنافسية لجذب العملاء",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "While this would attract customers, it is not favorable in the long-term as it limits revenue, reduces the ability to grow, and increases your risk sensitivity."
                             },
                             {
@@ -164,6 +245,10 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 8,
+
+                                "Option_Ar": "خفض التكاليف التشغيلية للحفاظ على هوامش الربح",
+                                "Optionxplanation_Ar": "",
+                                
                                 "OptionExplaination": "Reducing Operation cost by downsizing or halting investments will only lead to limitations in future growth and expansion."
                             },
                             {
@@ -171,6 +256,10 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 3,
                                 "OptionLead": 5,
+
+                                "Option_Ar": "التركيز على تقديم خدمة عملاء ذات جودة عالية",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "This is the best solution, as your limiting further losses while retaining your most loyal customers."
                             },
                             {
@@ -178,12 +267,17 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 2,
                                 "OptionLead": 6,
+
+                                "Option_Ar": "قم بإجراء اندماج خاص بك",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "With a merger, your driving your bank to uncharted lands filled with high risks and high rewards."
                             }
                         ]
                     },
                     {                                                                                                                                                                                                                                                                                                                   
                         "LevelNb": 5,
+                        "Scenario_Ar": "بشكل غير متوقع، تم تسليم عدد كبير من استقالات الموظفين إليك. تشمل رئيس قسم خدمة العملاء ورئيس قسم التكنولوجيا وآخرين. يجب عليك اتخاذ إجراءات سريعة لتفادي المزيد من الأضرار",
                         "Scenario": "Unexpectedly, a sudden increase of high-profile staff resignation letters has been passed to you. The high-profile staff resignation wave include the Chief Customer Officer (CCO), Chief of Technology Officer (CTO), and others. You must act swiftly to avoid further damages.",
                         "ScenarioOptions": [
                             {
@@ -191,6 +285,10 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 3,
                                 "OptionLead": 9,
+
+                                "Option_Ar": "ترقية الموظفين بشكل مؤقت",
+                                "Optionxplanation_Ar": "",
+                                
                                 "OptionExplaination": "Promoting from with is an efficient way of handing down the work in a smooth transition. In addition, this action increases employee satisfaction, as they feel that they are prioritized."
                             },
                             {
@@ -198,6 +296,10 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 5.5,
+
+                                "Option_Ar": "توظيف مرشحين رفيعي المستوى بعروض مميزة",
+                                "Optionxplanation_Ar": "",
+                                
                                 "OptionExplaination": "While you might be able to attract talent, you will not satisfy your original staff, as they will feel desatisfied and betrayed that you did not select from within. Thus, this option would only increase staff resignation."
                             },
                             {
@@ -205,39 +307,58 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 4,
                                 "OptionLead": 9,
+
+                                "Option_Ar": "تأسيس لجنة قيادة داخلية لإدارة الوظائف ووضع خطة للخلافة",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "The Committe will fill the gaps of the missing staff temporarily and will make sure to recruit the best fit."
                             }
                         ]
                     },
                     {                                                                                                                                                                                                                                                                                                                   
                         "LevelNb": 5.5,
+                        "Scenario_Ar": "بسبب قراراتك السابقة: أصبح الموظفون غير راضين بسبب عدم اهتمامك بالتوظيف من داخل الشركة. لقد أدت قراراتك إلى انخفاض جهود التعاون بين الموظفين الجدد والقدامى",
                         "Scenario": "Due to past decisions: The staff have become dissatisfied with betrayal of not promoting from within. Your decision has led to low teamwork efforts between the new employees and the old ones.",
                         "ScenarioOptions": [
                             {
-                                "Option": "Create a morale boosting team building retreat.",
-                                "OptionCause": "Lost",
-                                "OptionWhy": "Nice way to add salt to the wound.",
-                                "OptionPTS": 0,
+                                "Option": "Create a morale boosting team building retreat",
+                                "OptionCause": "Cont.",
+                                "OptionPTS": 1,
+                                "OptionLead": 9,
+
+                                "Option_Ar": "إنشاء نشاط ممتع لبناء الفريق",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "The heat between new employees and old ones will not be solved due to team building events. It needs geniune transparency."
                             },
                             {
-                                "Option": "Offer Career development opportunities.",
+                                "Option": "Offer Career development opportunities",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Seems good. The issue still exists.",
+                                "OptionWhy": "Every act of kindness is charity",
+                                "OptionWhy_Ar": "كُلُّ مَعْرُوفٍ صَدَقَةٌ",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "تقديم فرص لتطوير المسار الوظيفي",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Offering this career development opportunities will not cool down the heat between these two sides."
                             },
                             {
-                                "Option": "Conduct a transparency meeting with your employees.",
+                                "Option": "Conduct a transparency meeting with your employees",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 2,
                                 "OptionLead": 9,
+
+                                "Option_Ar": "عقد اجتماع بصدق",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Being honest is what they need to feel reassured. However, as a CEO you must be loyal to those you work with, Afterall a leadership quality is loyalty."
                             }
                         ]
                     },
                     {
                         "LevelNb": 6,
+                        "Scenario_Ar": "بسبب قراراتك السابقة: لقد جذبت ثلاثة مرشحين لعملية الاندماج",
                         "Scenario": "Due to past decisions: you have attracted 3 possible candidates for your merger.",
                         "ScenarioOptions": [
                             {
@@ -245,6 +366,10 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 0.5,
                                 "OptionLead": 7,
+
+                                "Option_Ar": "بنك الابتكار: يهدف إلى إدخال تكنولوجيا عالية الكفاءة في النظام المصرفي",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "A good choice as the bank is heading towards a modern world filled with high tech integration."
                             },
                             {
@@ -252,19 +377,29 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 7,
+
+                                "Option_Ar": "بنك الثقة الإقليمي: بنك يهدف إلى الاستقرار وإدارة المخاطر بفعالية",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "This is the best choice as merging is quite risky and distruptive. The aim of the merger is to be as smooth and as stable as possible"
                             },
                             {
                                 "Option": "SC Bank: Aimming for quick expansion and maximization of profit through high risk ventures.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Ambition is good, this is suicide.",
+                                "OptionWhy": "Fear doesn't prevent death. It prevents life",
+                                "OptionWhy_Ar": "الخوف لا يمنع من الموت ولكنه يمنع من الحياة",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "بنك سبي: يهدف إلى التوسع السريع وزيادة الأرباح من خلال المشاريع عالية المخاطر",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "The Merger is a delicate process that has protective measures to ensure a smooth transition. Expansion is the obvious goal on both sides. However, risky actions at such early stages of the merger undermines that whole point of the plan."
                             }
                         ]
                     },
                     {
                         "LevelNb": 7,
+                        "Scenario_Ar": "لحسن الحظ، تم قبول الاندماج وسيتم تنفيذه قريبًا. ومع ذلك، فإن هذا الاندماج قد وضع دورك كمدير تنفيذي في خطر. يجب عليك اختيار خيار فعال لإنقاذ وظيفتك",
                         "Scenario": "Fortunately, the merger has been accepted and will be soon implemented. However, this merger has placed your job status as CEO in danger. You must choose an effective option to save your job.",
                         "ScenarioOptions": [
                             {
@@ -272,41 +407,65 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 7.5,
+
+                                "Option_Ar": "عرض دور قيادي مؤقت على مستشار خارجي",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Shows your commited to smooth and efficient transition and integration."
                             },
                             {
                                 "Option": "Announce a Major investment in a high risk venture.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "I see you like living close to the edge, but the board does not.",
+                                "OptionWhy": "If you try, you may fail. If you didn't try, you ensure it",
+                                "OptionWhy_Ar": "إذا حاولت ربما تفشل, إذا لم تحاول ضمنت الفشل",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "استثمار كبير في مشروع عالي المخاطر",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "High Risk in such early days of merging would only cause more distablity."
                             },
                             {
                                 "Option": "Push for immediate expansion into new markets post-merger.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "The bank aims for stability in this merger. You added more problems",
+                                "OptionWhy": "Tomorrow is nearby if one has patience",
+                                "OptionWhy_Ar": "إن غَداً لِناظِرِهِ قَريب",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "التوسع في الأسواق الجديدة بعد الاندماج",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "This desicion can cause financial strain on the bank and can lead investors to believe that you care about growth more than stability first."
                             },
                             {
                                 "Option": "Announce a significant executive compensation increase.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "I know you are not selfish, but you made it seem so.",
+                                "OptionWhy": "Be humble",
+                                "OptionWhy_Ar": "كن متواضعًا",
                                 "OptionPTS": 0,
-                                "OptionExplaination": "Could be precieved as self-serving or inappropriate in such expansion."
+
+                                "Option_Ar": "الإعلان عن زيادة كبيرة في تعويضات للإدارة التنفيذية",
+                                "Optionxplanation_Ar": "سيرونك أناني",
+
+                                "OptionExplaination": "Could be perceived as self-serving or inappropriate in such expansion."
                             }
 
                         ]
                     },
                     {
                         "LevelNb": 7.5,
-                        "Scenario": "You have managed to keep your position as CEO; however, your employees are threatened by such decisions at you cant change due to responsibility. Harming such employees should be the last thing your list.",
+                        "Scenario_Ar": "لقد تمكنت من الحفاظ على منصبك كمدير تنفيذي؛ ومع ذلك، يشعر موظفوك بالتهديد بالفصل بسبب الاندماج. كقائد من المهم جدا أن تحاول إيجاد طرق لحماية موظفيك",
+                        "Scenario": "You have managed to keep your position as CEO; however, your employees are threatened to be laid off due to the merger. Harming such employees should be the last thing your list.",
                         "ScenarioOptions": [
                             {
                                 "Option": "Offer training programs for those who have been laid off as recompensation with the basic packages.",
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 9,
+
+                                "Option_Ar": "تقديم برامج تدريبية لأولئك الذين تم تسريحهم كتعويض",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Shows your commited to smooth and efficient transition and integration."
                             },
                             {
@@ -314,33 +473,53 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 9,
+
+                                "Option_Ar": "تقديم التعويضات",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "High Risk in such early days of merging would only cause more distablity."
                             },
                             {
                                 "Option": "Give employees extra 2 months of work and warn them of their lay offs beforehand.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Nice way to add salt to the wound",
+                                "OptionWhy": "Do not hurt the wound by recalling the pain",
+                                "OptionWhy_Ar": "لا تجرح الجرح بذكرى الأذى",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "تقديم شهرين إضافيين من العمل للموظفين وتحذيرهم مسبقًا من الفصل",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "This will increase senstivity between kept employees and laid off ones."
                             }
                         ]
                     },
                     {
                         "LevelNb": 8,
-                        "Scenario": "Due to past decisions: Cutting costs have led the customers to be let down on the quality of service given.",
+                        "Scenario_Ar": "بسبب قراراتك السابقة: أدت تخفيضات التكاليف إلى خيبة أمل العملاء في جودة الخدمة المقدمة",
+                        "Scenario": "Due to past decisions: Cutting costs have led the customers to be let down on the quality of service given",
                         "ScenarioOptions": [
                             {
-                                "Option": "Offer a public apology.",
+                                "Option": "Offer a public apology",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Good intention, but no actions?",
+                                "OptionWhy": "Actions speak louder than words. Good job.",
+                                "OptionWhy_Ar": "الأَفْعَالُ أَبْلَغُ مِنْ الأَقْوَال",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "تقديم اعتذار علني",
+                                "Optionxplanation_Ar": "يريد العملاء إجراءات وليس اعتذارًا",
+
                                 "OptionExplaination": "What is there to offer? An apology is the last plan for any organization that has its backs against the wall. Your not against the wall."
                             },
                             { 
                                 "Option": "Invite premium customers to exclusive bank events.",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Really? What about the non-premium customers?",
+                                "OptionWhy": "Do not exclude anyone; everyone has a value",
+                                "OptionWhy_Ar": "لا تُستثني أحدًا، فالجميع لهم قيمة",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "دعوة العملاء المميزين لحضور فعاليات حصرية من البنك ",
+                                "Optionxplanation_Ar": "المشكلة تشمل جميع العملاء وليس فقط العملاء المميزين",
+
                                 "OptionExplaination": "The problem is with all customers not just your premium customers. If customers found out about these events, it would ruin the reputation as a greedy bank that just cares about their premium members."
                             },
                             {
@@ -348,54 +527,70 @@
                                 "OptionCause": "Cont.",
                                 "OptionPTS": 1,
                                 "OptionLead": 9,
+
+                                "Option_Ar": "بدء حملة تسويقية لتقدير العملاء",
+                                "Optionxplanation_Ar": "حملتك تنشر الطمأنينة لجميع عملائك بشأن التزامك تجاههم",
+
                                 "OptionExplaination": "The problem is with the customers satisfaction. Your campaign address the issue and reassures the customers of the commitment for them."
                             }
                         ]
                     },
                     {
                         "LevelNb": 9,
+                        "Scenario_Ar": "لقد حدثت سرقة في أحد فروع البنك الخاص بك!! تم سرقة الأصول والوثائق، وأصيب 6 أشخاص خلال هذا الهجوم. سمعتك مع عملائك معرضة لخطر ",
                         "Scenario": "A bank robbery has occured!! Essential assets and documents have been stolen with 6 people injury during this hostile attack. Your reputation is greatly damaged. The board members are giving you a chance to fix this now!",
                         "ScenarioOptions": [
                             {
                                 "Option": "Launch a Charity Fundraisers",
-                                "OptionCause": "Lost",
-                                "OptionWhy": "Really? You are trying to run away from addressing this major issue.",
+                                "OptionCause": "Lost", 
+                                "OptionWhy": "Every act of kindness is charity",
+                                "OptionWhy_Ar": "كُلُّ مَعْرُوفٍ صَدَقَةٌ",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "إطلاق حملات لجمع التبرعات الخيرية للمحتاجين",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "That is not a suitable situation to start a fundraiser. Your attempt is obvious and dishonarable."
                             },
                             {
                                 "Option": "Hire Additional Security guards accross all branches.",
                                 "OptionCause": "Victory",
                                 "OptionWhy": "Actions speak louder than words. Good job.",
+                                "OptionWhy_Ar": "الأَفْعَالُ أَبْلَغُ مِنْ الأَقْوَال",
                                 "OptionPTS": 3,
+
+                                "Option_Ar": "توضيف المزيد من حراس الأمن",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "It is a basic solution, however it shows that your commited to improving rather than giving empty words."
                             },
                             {
                                 "Option": "Introduce a strict bank verification system (Face ID, Touch ID).",
                                 "OptionCause": "Lost",
-                                "OptionWhy": "Customers: I hate this new system.",
+                                "OptionWhy": "The best way to find yourself is to lose yourself in the service of others",
+                                "OptionWhy_Ar": "أفضل طريقة لتجد نفسك هي أن تفقد نفسك في خدمة الآخرين",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "تقديم نظام صارم للتحقق من الهوية في البنك (فيس أيدي)",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": "Introducing such system could work in stopping future robberies. However, customers tend to value a seemless experience and could feel threatened as if you are shifting the blame to them."
                             },
                             {
                                 "Option": "Focus on Funding Investigations",
-                                "OptionCause": "",
-                                "OptionWhy": "",
+                                "OptionCause": "Lost",
+                                "OptionWhy": "Hope is being able to see that there is light despite all of the darkness",
+                                "OptionWhy_Ar": "الأمل هو القدرة على رؤية الضوء رغم كل الظلام",
                                 "OptionPTS": 0,
+
+                                "Option_Ar": "التركيز على البحث عن اللصوص",
+                                "Optionxplanation_Ar": "",
+
                                 "OptionExplaination": ""
                             }
                         ]
                     }
                 ]
-            }
-        },
-        {
-            "Name": "Sliver",
-            "FullName": "Sliver Oak Bank (Under Development)",
-            "Game": {
-                "Difficulty": "Easy",
-                "EstimatedTime": "3 mins",
-                "CaseDescription": "Hello World!"
             }
         }
     ]
