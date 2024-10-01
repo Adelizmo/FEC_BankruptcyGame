@@ -790,6 +790,7 @@ body {
     font-weight: 600;
 }
 #End_Advice {
+    font-size: 23px;
     flex-shrink: 0;
     color: rgb(80, 80, 80);
     width: 70%;
@@ -803,6 +804,7 @@ body {
     font-style: italic;
 }
 #End_Advice_Ar {
+    font-size: 23px;
     flex-shrink: 0;
     color: rgb(80, 80, 80);
     width: 70%;

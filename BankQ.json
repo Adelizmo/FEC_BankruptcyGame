@@ -16,8 +16,8 @@
                 "CaseDescription_Ar": "بصفتك الرئيس التنفيذي لبنك راينفورد، مؤسسة مالية متوسطة الحجم، تواجه حاليًا سلسلة من التحديات غير المتوقعة. لقد شهد البنك انخفاضًا في السوق، مما أدى إلى تراجع ملحوظ في قيمة الأصول وزيادة حادة في حالات تعثر القروض. وقد حدد مجلس الإدارة مهلة قدرها 48 ساعة لتقديم خطة استراتيجية لإنقاذ البنك من الإفلاس المحتمل",
 
 
-                "PlayerPointsMax": 19,
-                "PlayerPointsMin": 9.25,
+                "PlayerPointsMax": 16,
+                "PlayerPointsMin": 7.25,
                 "CaseDescription": "You are the CEO of Feinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in the market, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
 
                 "Levels": [
@@ -460,7 +460,7 @@
                                 "OptionPTS": 1,
                                 "OptionLead": 8.5,
 
-                                "Option_Ar": "افصل الموظفين أصحاب معدلات الإنتاجية المنخفضة",
+                                "Option_Ar": "فصل الموظفين أصحاب معدلات الإنتاجية المنخفضة",
                                 "Optionxplanation_Ar": "هذا هو أسهل قرار لخفض التكاليف، ولكنه قد ينشر الخوف بين الموظفين",
 
                                 "OptionExplaination": "This is the easiest decision to reduce costs, however it can spread fear"

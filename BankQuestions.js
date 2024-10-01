@@ -492,10 +492,10 @@ const Game_WinPlayerTitle = (e) => {
     else if (e > 13 && e <= 15)
         PickInputs[9].innerHTML = "<p class='EnglishText' style='color: black;'>Title:</p> <span class='EnglishText' id='End_PlayerTitleCallingCard'>The Bankruptcy Buster</span> <span class='ArabicText' id='End_PlayerTitleCallingCard'>قائد الابتكار</span> <p class='ArabicText' style='color: black;'>:لقب</p>"
 
-    else if (e > 15 && e <= 18)
+    else if (e > 15 && e <= 17)
         PickInputs[9].innerHTML = "<p class='EnglishText' style='color: black;'>Title:</p> <span class='EnglishText' id='End_PlayerTitleCallingCard'>The Strategic Conqueror</span> <span class='ArabicText' id='End_PlayerTitleCallingCard'>محقق الرؤى</span> <p class='ArabicText' style='color: black;'>:لقب</p>"
     
-    else if (e > 18)
+    else if (e > 17)
         PickInputs[9].innerHTML = "<p class='EnglishText' style='color: black;'>Title:</p> <span class='EnglishText' id='End_PlayerTitleCallingCard'>The Apex Executor</span> <span class='ArabicText' id='End_PlayerTitleCallingCard'>الملك المالي</span> <p class='ArabicText' style='color: black;'>:لقب</p>"
 }
 
