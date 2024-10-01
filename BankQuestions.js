@@ -173,56 +173,28 @@ const ChangeDecision = (e) => {
 }
 
 // Game timing function (Experimental)
-var timerstatus = false
-var d1 = document.getElementsByClassName('SwitchHouse')
-var d2 = document.getElementsByClassName('SwitchBTN')
-const TimerSwitch = (e) => {
-    if (e == "active") {
-        if (timerstatus == false) {
-            d1[0].classList.add('Selected')
-            d2[0].classList.add('Selected')
-            d1[1].classList.add('Selected')
-            d2[1].classList.add('Selected')
-            timerstatus = true
-            timer.innerHTML = "3:00"
-            timer.style.opacity = "1"
-        }
-        else if (timerstatus == true) {
-            d1[0].classList.remove('Selected')
-            d2[0].classList.remove('Selected')
-            d1[1].classList.remove('Selected')
-            d2[1].classList.remove('Selected')
-            timerstatus = false
-            timer.style.opacity = "0"
-        }
-    }
-    else if (e == "reset") {
-        d1[0].classList.remove('Selected')
-        d2[0].classList.remove('Selected')
-        d1[1].classList.remove('Selected')
-        d2[1].classList.remove('Selected')
-        timerstatus = false
-        timer.style.opacity = "0"
-    }
-}
+var inv = undefined
 const Game_Timing = (type, min) => {
     if (type == "Set") {
-        var E_Min = new Date(new Date().setMinutes(new Date().getMinutes() + min))
+        var countdownTime = new Date().getTime() + min * 60 * 1000;
+        timer.style.opacity = "1"
         inv = setInterval(function() {
-            var date = new Date()
-            var difference = 60*(E_Min.getMinutes() - date.getMinutes()) + (E_Min.getSeconds() - date.getSeconds())
-            var D_Min = difference / 60
-            var D_Sec = (D_Min - Math.floor(D_Min)) * 60
-            D_Min = Math.floor(D_Min)
-            D_Sec = Math.round(D_Sec)
-            if (D_Sec <= 9) {
-                D_Sec = "0" + D_Sec
-            }
-            timer.innerHTML = `${D_Min}:${D_Sec}`
-            if (Math.floor(D_Sec) < 10 && D_Min == 0) {
+            var now = new Date().getTime()
+            var timeLeft = countdownTime - now
+
+            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            if (minutes == 0 && seconds < 10) {
                 timer.style.color = "red"
             }
-            if (date.getMinutes() == E_Min.getMinutes() && date.getSeconds() == E_Min.getSeconds()) {
+            if (seconds <= 9) {
+                seconds = "0" + seconds
+            }
+            timer.innerHTML = `${minutes}:${seconds}`
+
+            if (minutes == 0 && seconds == "00") {
                 clearInterval(inv)
                
                 console.log('Game Over')
@@ -236,7 +208,7 @@ const Game_Timing = (type, min) => {
                     global_message = "ran out of time"
 
                     PickInputs[8].innerHTML = "You can't buy Time nor Health"
-                    document.getElementById('End_Advice_Ar').innerHTML = "لا يمكنك شراء الوقت أو الصحة"
+                    document.getElementById('End_Advice_Ar').innerHTML = "لا يمكنك شراء الوقت ولا الصحة"
 
                     PickInputs[6].innerHTML = ""
                     for (i = 0; i < recordedGamePlay.length; i++) {
@@ -300,7 +272,7 @@ const Game_Timing = (type, min) => {
                     global_message = "ran out of time"
 
                     PickInputs[8].innerHTML = "You can't buy Time nor Health"
-                    document.getElementById('End_Advice_Ar').innerHTML = "لا يمكنك شراء الوقت أو الصحة"
+                    document.getElementById('End_Advice_Ar').innerHTML = "لا يمكنك شراء الوقت ولا الصحة"
 
                     PickInputs[6].innerHTML = ""
                     for (i = 0; i < recordedGamePlay.length; i++) {
@@ -340,7 +312,12 @@ const Game_Timing = (type, min) => {
         }, 100)
     }
     else if (type == "End") {
-        clearInterval(inv)
+        if (inv == undefined) {
+            
+        }
+        else {
+            clearInterval(inv)
+        }
     }
 
 }
@@ -351,9 +328,7 @@ const Game_Configuration = (e) => {
     if (e == 'StartGame') {
         currentLevel = 1;
 
-        if (timerstatus == true) {
-            Game_Timing("Set", 3)
-        }
+        Game_Timing("Set", 4.5)
 
         if (SelectedGameData.Levels == undefined) {
             PopUp('This Case is still<br>under development.', false)
@@ -505,6 +480,7 @@ const Game_Configuration = (e) => {
             }  
         } 
     }
+    console.log(playerPTS)
 }
 const Game_WinPlayerTitle = (e) => {
     if (e <= 11) 
@@ -574,7 +550,8 @@ const Game_Retry = () => {
     recordedGamePlay = []
     timer.style.color = "white"
     clearInterval(inv)
-    TimerSwitch('reset')
+    timer.style.opacity = "0"
+    inv = undefined
     Game_Timing('End')
 }
 
@@ -617,10 +594,10 @@ const Game_ChangeLanguage = (type) => {
                 PickInputs[7].innerHTML = "مبروك! لقد أنقذت البنك"
             }
             else if (global_message == "ran out of time") {
-                PickInputs[7].innerHTML = "انتهى وقتك"
+                PickInputs[7].innerHTML = "لقد انتهى الوقت"
             }
             else {
-                PickInputs[7].innerHTML = "لقد فشلت"
+                PickInputs[7].innerHTML = "حاول مرة أخرى"
             }
         }
         else if (currentLanguage == "En") {
@@ -650,10 +627,10 @@ const Game_ChangeLanguage = (type) => {
                 PickInputs[7].innerHTML = "Congrats! You've saved the bank"
             }
             else if (global_message == "ran out of time") {
-                PickInputs[7].innerHTML =  "You ran out of time"
+                PickInputs[7].innerHTML =  "You ran out of time."
             }
             else {
-                PickInputs[7].innerHTML = "You Failed"
+                PickInputs[7].innerHTML = "Try Again"
             }
         }
     }
@@ -683,10 +660,10 @@ const Game_ChangeLanguage = (type) => {
             PickInputs[7].innerHTML = "مبروك! لقد أنقذت البنك"
         }
         else if (global_message == "ran out of time") {
-            PickInputs[7].innerHTML = "انتهى وقتك"
+            PickInputs[7].innerHTML = "لقد انتهى الوقت"
         }
         else {
-            PickInputs[7].innerHTML = "لقد فشلت"
+            PickInputs[7].innerHTML = "حاول مرة أخرى"
         }
     }
     else if (type == "English") {
@@ -716,10 +693,10 @@ const Game_ChangeLanguage = (type) => {
             PickInputs[7].innerHTML = "Congrats! You've saved the bank"
         }
         else if (global_message == "ran out of time") {
-            PickInputs[7].innerHTML =  "You ran out of time"
+            PickInputs[7].innerHTML =  "You ran out of time."
         }
         else {
-            PickInputs[7].innerHTML = "You Failed"
+            PickInputs[7].innerHTML = "Try Again"
         }
     }
 }

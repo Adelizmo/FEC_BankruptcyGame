@@ -618,41 +618,7 @@ body {
     border-inline: 1px solid var(--b2);
     border-bottom: 2px solid var(--b2);
 }
-/* TimerStyling */
-.SwitchContainer {
-    display: flex;
-    gap: 20px;
-    line-height: 20px;
-    justify-content: center;
-    align-items: center;
-}
-.SwitchHouse {
-    width: calc(85px - 15px);
-    padding-inline: 7.5px;
-    height: 50px;
-    background: var(--b3);
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    border: 1px solid #e6c061;
-    transition: 0.3s all ease-in-out;
-}
-.SwitchBTN {
-    width: 35px;
-    height: 35px;
-    border-radius: 25px;
-    background: var(--b2);
-    transition: 0.3s all ease-in-out;
-}
 
-.SwitchHouse:is(.Selected) {
-    border: 1px solid #dfd5bb;
-    background: var(--b4)
-}
-.SwitchBTN:is(.Selected) {
-    background: var(--b3);
-    translate: 35px 0px
-}
 
 /* Questions Page */
 #ScenarioQuestionPage {
@@ -734,7 +700,7 @@ body {
 .ScenarioCaseP {
     width: calc(100% - 50px);
     color: black;
-    font-size: 27px;
+    font-size: 23px;
     line-height: 40px;
 }
 
@@ -743,7 +709,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    border: 2px solid rgb(220, 187, 120);
+    border: 2px solid rgb(201, 155, 64);
     overflow: hidden;
 }
 .SCO_Selector {
@@ -834,6 +800,7 @@ body {
     text-align: center;
     text-wrap: wrap;
     font-weight: 600;
+    font-style: italic;
 }
 #End_Advice_Ar {
     flex-shrink: 0;
