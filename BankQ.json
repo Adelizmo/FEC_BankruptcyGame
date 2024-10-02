@@ -18,7 +18,7 @@
 
                 "PlayerPointsMax": 16,
                 "PlayerPointsMin": 7.25,
-                "CaseDescription": "You are the CEO of Feinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in the market, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
+                "CaseDescription": "You are the CEO of Reinford Bank, a mid-sized financial institution that has recently faced a series of unexpected challenges. The Feinford Bank has been hit by a significant downturn in the market, leading to a substantial drop in asset values and a sharp increase in loan defaults. The board of directors has given you a deadline of 48 hours to propose a plan to save the bank from potential bankruptcy.",
 
                 "Levels": [
                     {
